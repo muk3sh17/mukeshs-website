@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Mukesh Sankarasetty, AI Product Manager</title>
+<meta name="description" content="Product case study by Mukesh Sankarasetty: context, role, process, decisions, outcomes and learnings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="loading" data-page="case">
+<main id="main"></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module">
+import { init, txt, pad, esc } from './assets/site.js';
+import { projects } from './assets/projects.js';
+
+// case.html#<slug> — a hash survives clean-URL redirects on any static host
+const i = projects.findIndex(p => p.slug === location.hash.slice(1));
+addEventListener('hashchange', () => location.reload());
+if (i < 0) { location.replace('work.html'); throw new Error('Unknown case study'); }
+const p = projects[i], next = projects[(i + 1) % projects.length];
+const c = t => `hsl(${(t % 1) * 360} 85% 60%)`;
+document.title = `${p.title}${p.client.startsWith('TODO') || p.client === p.title ? '' : ' — ' + p.client} | Mukesh Sankarasetty, AI Product Manager`;
+
+const list = items => `<ul class="blist">${items.map((t, k) => `<li><span class="mono">${pad(k)}</span><div>${txt(t)}</div></li>`).join('')}</ul>`;
+const sections = [
+  ['overview', 'Overview', 'The <em>context</em>', `<p>${txt(p.context)}</p>`],
+  ['problem', 'Problem', 'The <em>problem</em>', `<p>${txt(p.problem)}</p>`],
+  ['role', 'My role', 'What I <em>owned</em>', list(p.contribution)],
+  ['process', 'Process', 'How it <em>came together</em>', `<div class="steps csteps" style="--n:${p.process.length}">${p.process.map((s, k) =>
+    `<div class="step" data-reveal><span class="mono">${pad(k)}</span><h3>${txt(s.step)}</h3><p>${txt(s.text)}</p></div>`).join('')}</div>`],
+  ['decisions', 'Key decisions', 'Key <em>decisions</em>', list(p.decisions)],
+  ['outcomes', 'Outcomes', 'The <em>outcomes</em>', list(p.outcomes)],
+  ['learnings', 'Learnings', 'What I <em>learned</em>', list(p.learnings)]
+];
+
+document.getElementById('main').innerHTML = `
+  <section class="case-hero" data-hero-zone>
+    <span class="label">Case study ${pad(i)} / ${pad(projects.length - 1)} — <a href="work.html">All work</a></span>
+    <div class="tags mono">${p.status ? `<span class="chip chip--live">${txt(p.status)}</span>` : ''}${p.tags.map(t => `<span class="chip">${txt(t)}</span>`).join('')}</div>
+    <h1 class="display" data-hero aria-label="${esc(p.title)}"><span class="line">${txt(p.title)}</span></h1>
+    <p class="lead" data-split style="margin-bottom:clamp(32px,5vw,64px)">${txt(p.summary)}</p>
+    <dl class="case-meta mono">
+      ${[['Role', p.role], ['Company', p.company], ['Client', p.client], ['Timeline', p.meta.timeline], ['Team', p.meta.team], ['Platform', p.meta.platform]]
+        .map(([k, v]) => `<div><dt>${k}</dt><dd>${txt(v)}</dd></div>`).join('')}
+    </dl>
+    ${p.link ? `<p style="margin-top:32px"><a class="btn" href="${p.link}" target="_blank" rel="noopener" data-magnetic>Visit live site <i>&rarr;</i></a></p>` : ''}
+    <div class="cover">
+      <div class="cover__bg" style="background:radial-gradient(circle at 25% 30%, ${c(p.hue + 0.1)}, transparent 55%), radial-gradient(circle at 80% 70%, ${c(p.hue + 0.3)}, transparent 50%), linear-gradient(160deg, ${c(p.hue)}, #0a0a0b)"></div>
+      ${p.cover ? `<img src="${p.cover}" alt="${esc(p.title)} cover" loading="lazy">` : `<span class="mono todo" style="position:absolute;left:var(--pad);bottom:24px">TODO: Add cover image → set "cover" in projects.js</span>`}
+    </div>
+  </section>
+
+  <section style="padding-top:clamp(64px,8vw,120px);padding-bottom:0">
+    <span class="label">Impact at a glance</span>
+    <div class="metrics">${p.metrics.map(m => `<div class="metric" data-reveal><b>${txt(m.value)}</b><span>${txt(m.label)}</span></div>`).join('')}</div>
+  </section>
+
+  <section class="case-body" style="padding-top:0">
+    <ul class="toc mono">${sections.map(([id, name]) => `<li><a href="#${id}">${name}</a></li>`).join('')}</ul>
+    <div>
+      ${sections.map(([id, name, h, body]) => `<article class="csec" id="${id}"><span class="label">${name}</span><h2 data-split>${h}</h2>${body}</article>`).join('')}
+      ${(p.images || []).length ? `<div class="gallery">${p.images.map(src => `<img src="${src}" alt="" loading="lazy" data-reveal>`).join('')}</div>` : ''}
+    </div>
+  </section>
+
+  <a class="next" href="case.html#${next.slug}" data-hue="${next.hue}" data-title="${esc(next.title)}" data-client="${esc(next.client)}">
+    <span class="label" style="margin-bottom:24px">Next case study</span>
+    <span class="h2" style="display:block">${txt(next.title)} <em>&rarr;</em></span>
+  </a>`;
+
+init();
+
+// scroll-spy for the table of contents + cover parallax
+const toc = [...document.querySelectorAll('.toc a')];
+sections.forEach(([id], k) => ScrollTrigger.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%',
+  onToggle: s => s.isActive && toc.forEach((a, j) => a.classList.toggle('is-active', j === k)) }));
+gsap.to('.cover__bg', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.cover', start: 'top bottom', end: 'bottom top', scrub: true } });
+</script>
+</body>
+</html>

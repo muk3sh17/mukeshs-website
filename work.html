@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Mukesh Sankarasetty, AI Product Manager</title>
+<meta name="description" content="Case studies by Mukesh Sankarasetty: AI-enabled platforms, enterprise SaaS, healthcare, insurance, telecom and independent 0→1 products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="loading" data-page="work">
+<main id="main">
+  <section class="hero" data-hero-zone style="min-height:80svh">
+    <span class="label">Case studies <span id="count"></span></span>
+    <h1 class="display" data-hero aria-label="Work">
+      <span class="line">Work</span>
+    </h1>
+    <div class="hero__meta">
+      <p data-split>Products I've owned, designed and built — from enterprise AI platforms to independent experiments. Each one covers the process, the decisions, the outcomes and what I learned.</p>
+      <p class="mono dim" data-split>2016 — 2026</p>
+      <div class="scroll-cue mono"><i></i>Scroll</div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="filters mono" role="group" aria-label="Filter case studies" id="filters"></div>
+    <ul class="plist" id="list"></ul>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module">
+import { init, row } from './assets/site.js';
+import { projects } from './assets/projects.js';
+
+const list = document.getElementById('list');
+list.innerHTML = projects.map(row).join('');
+document.getElementById('count').textContent = `(${projects.length})`;
+
+// filters = type + any tag used by 2+ projects
+const counts = {};
+list.querySelectorAll('li').forEach(li => li.dataset.tags.split('|').forEach(t => counts[t] = (counts[t] || 0) + 1));
+const tags = ['All', ...Object.keys(counts).filter(t => counts[t] > 1 && !t.startsWith('TODO'))];
+counts.All = projects.length;
+const bar = document.getElementById('filters');
+bar.innerHTML = tags.map(t => `<button aria-pressed="${t === 'All'}" data-t="${t}">${t}<sup>${counts[t]}</sup></button>`).join('');
+bar.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  bar.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  list.querySelectorAll('li').forEach(li => li.hidden = b.dataset.t !== 'All' && !li.dataset.tags.split('|').includes(b.dataset.t));
+  ScrollTrigger.refresh();
+});
+init();
+</script>
+</body>
+</html>
