@@ -35,10 +35,14 @@ const sections = [
   ['role', 'My role', 'What I <em>owned</em>', list(p.contribution)],
   ['process', 'Process', 'How it <em>came together</em>', `<div class="steps csteps" style="--n:${p.process.length}">${p.process.map((s, k) =>
     `<div class="step" data-reveal><span class="mono">${pad(k)}</span><h3>${txt(s.step)}</h3><p>${txt(s.text)}</p></div>`).join('')}</div>`],
+  p.images?.length && ['screens', 'Screens', 'The <em>product</em>', `<div class="gallery">${p.images.map(im =>
+    `<figure data-reveal><img src="${esc(im.src)}" alt="${esc(im.caption)}" loading="lazy"><figcaption class="mono dim">${txt(im.caption)}</figcaption></figure>`).join('')}
+    <p class="mono dim">Screens blurred to protect client confidentiality.</p></div>`],
   ['decisions', 'Key decisions', 'Key <em>decisions</em>', list(p.decisions)],
-  ['outcomes', 'Outcomes', 'The <em>outcomes</em>', list(p.outcomes)],
+  ['outcomes', 'Outcomes', 'The <em>outcomes</em>', list(p.outcomes) + (p.quote ?
+    `<blockquote class="quote" data-reveal><p>“${txt(p.quote.text)}”</p><cite class="mono dim">— ${txt(p.quote.by)}</cite></blockquote>` : '')],
   ['learnings', 'Learnings', 'What I <em>learned</em>', list(p.learnings)]
-];
+].filter(Boolean);
 
 document.getElementById('main').innerHTML = `
   <section class="case-hero" data-hero-zone>
@@ -53,7 +57,7 @@ document.getElementById('main').innerHTML = `
     ${p.link ? `<p style="margin-top:32px"><a class="btn" href="${p.link}" target="_blank" rel="noopener" data-magnetic>Visit live site <i>&rarr;</i></a></p>` : ''}
     <div class="cover">
       <div class="cover__bg" style="background:radial-gradient(circle at 25% 30%, ${c(p.hue + 0.1)}, transparent 55%), radial-gradient(circle at 80% 70%, ${c(p.hue + 0.3)}, transparent 50%), linear-gradient(160deg, ${c(p.hue)}, #0a0a0b)"></div>
-      ${p.cover ? `<img src="${p.cover}" alt="${esc(p.title)} cover" loading="lazy">` : `<span class="mono todo" style="position:absolute;left:var(--pad);bottom:24px">TODO: Add cover image → set "cover" in projects.js</span>`}
+      ${p.cover ? `<img src="${esc(p.cover)}" alt="${esc(p.title)} product screen, blurred" loading="lazy">` : `<span class="mono todo" style="position:absolute;left:var(--pad);bottom:24px">TODO: Add cover image → set "cover" in projects.js</span>`}
     </div>
   </section>
 
@@ -65,9 +69,7 @@ document.getElementById('main').innerHTML = `
   <section class="case-body" style="padding-top:0">
     <ul class="toc mono">${sections.map(([id, name]) => `<li><a href="#${id}">${name}</a></li>`).join('')}</ul>
     <div>
-      ${sections.map(([id, name, h, body]) => `<article class="csec" id="${id}"><span class="label">${name}</span><h2 data-split>${h}</h2>${body}</article>`).join('')}
-      ${(p.images || []).length ? `<div class="gallery">${p.images.map(src => `<img src="${src}" alt="" loading="lazy" data-reveal>`).join('')}</div>` : ''}
-    </div>
+      ${sections.map(([id, name, h, body]) => `<article class="csec" id="${id}"><span class="label">${name}</span><h2 data-split>${h}</h2>${body}</article>`).join('')}    </div>
   </section>
 
   <a class="next" href="case.html#${next.slug}" data-hue="${next.hue}" data-title="${esc(next.title)}" data-client="${esc(next.client)}">
