@@ -37,7 +37,7 @@ const sections = [
     `<div class="step" data-reveal><span class="mono">${pad(k)}</span><h3>${txt(s.step)}</h3><p>${txt(s.text)}</p></div>`).join('')}</div>`],
   p.images?.length && ['screens', 'Screens', 'The <em>product</em>', `<div class="gallery">${p.images.map(im =>
     `<figure data-reveal><img src="${esc(im.src)}" alt="${esc(im.caption)}" loading="lazy"><figcaption class="mono dim">${txt(im.caption)}</figcaption></figure>`).join('')}
-    <p class="mono dim">Screens blurred to protect client confidentiality.</p></div>`],
+    <p class="mono dim">Designs shown with dummy data. Real client data and screenshots of live systems are blurred.</p></div>`],
   ['decisions', 'Key decisions', 'Key <em>decisions</em>', list(p.decisions)],
   ['outcomes', 'Outcomes', 'The <em>outcomes</em>', list(p.outcomes) + (p.quote ?
     `<blockquote class="quote" data-reveal><p>“${txt(p.quote.text)}”</p><cite class="mono dim">— ${txt(p.quote.by)}</cite></blockquote>` : '')],

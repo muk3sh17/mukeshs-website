@@ -69,8 +69,10 @@ export const projects = [
       'Live Claim TAT dashboards for each business unit cut manual reporting effort by 90%.'
     ],
     learnings: [
-      'TODO: What you would do differently next time.',
-      'TODO: What this project taught you about leading AI adoption in operations teams.'
+      'Digitising a broken process only makes the wrong thing faster. The biggest gains came from asking why each QC step existed at all.',
+      'Being on the warehouse floor surfaced edge cases no workshop would have. Three weeks onsite saved months of rework.',
+      'Ship one module end to end before widening scope: a working QC pilot earned the trust to take on claims.',
+      'AI readiness starts with data. Rules and audit trails first, models after.'
     ]
   },
   {
@@ -85,7 +87,7 @@ export const projects = [
     tags: ['Insurance', 'Data & BI', 'AI', 'Power BI'],
     hue: 0.58,
     summary: 'Turned 450+ legacy reports from six platforms into 60 self-serve Power BI dashboards. Agency reports now send themselves every month, and service agents answer agency questions on the call instead of 3–4 hours later.',
-    meta: { timeline: 'Nov 2024 — Oct 2025', team: 'TODO: Team size & roles', platform: 'Power BI, Power Automate, central data warehouse' },
+    meta: { timeline: 'Nov 2024 — Oct 2025', team: '8 across data engineering, Power BI and design', platform: 'Power BI, Power Automate, central data warehouse' },
     metrics: [
       { value: '450+ → 60', label: 'Legacy reports consolidated into Power BI dashboards (87% fewer)' },
       { value: '3–4 hrs → live', label: 'Time for a service agent to pull an agency’s data, now answered during the call' },
@@ -104,7 +106,6 @@ export const projects = [
     contribution: [
       'Involved from day zero, through due diligence, discovery and delivery.',
       'Redesigned the report estate: found similar reports, merged them and cut the total by 87%.',
-      'Wrote the PRD for a customer-experience dashboard built on ticketing-system data.',
       'Ran client meetings and presentations, managed the delivery team and reported to senior management.',
       'Oversaw Phase 2 after moving full-time to Optima AI in October 2025.'
     ],
@@ -119,8 +120,7 @@ export const projects = [
       'One parameterised report instead of dozens of copies: agency, line of business and period become filters, not files.',
       'Gave customer-service agents direct access to the APLR, filtered by agency ID, so questions get answered while the agency is still on the line.',
       'Automated monthly distribution from a maintained list of agencies, rather than having someone export and email reports every month.',
-      'AI where it reduces reading: Power BI smart narratives write plain-English summaries on key dashboards.',
-      'Customer-experience dashboard: calls received, CSAT, NPS and frequent words up top. Picking any call opens its details: who called, the agent, an AI summary of the recording, feedback score, turnaround time and duration.'
+      'AI where it reduces reading: Power BI smart narratives write plain-English summaries on key dashboards.'
     ],
     outcomes: [
       'Consolidated 450+ reports from six platforms into 60 self-serve Power BI dashboards (87% fewer).',
@@ -129,7 +129,11 @@ export const projects = [
       'Saved an estimated 120+ analyst hours per month.',
       'Phase 1 delivered on time; the client extended the engagement by six months for Phase 2.'
     ],
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'Most report sprawl is the same question asked by different teams. Find the question, not the report.',
+      'Prioritising hard in due diligence protected the deadline, and delivering on time is what won Phase 2.',
+      'The most valuable features are often invisible: a report that sends itself, or an answer given while the customer is still on the line.'
+    ]
   },
   {
     slug: 'media-intelligence',
@@ -143,7 +147,7 @@ export const projects = [
     tags: ['GenAI', 'Analytics', 'Client delivery'],
     hue: 0.98,
     summary: 'A GenAI media-intelligence platform for Mediaplus, one of Germany’s leading media agencies. I led client delivery after launch — redesigns, new reports and urgent requests — including a pitch prototype built over a single weekend.',
-    meta: { timeline: 'TODO: Confirm dates (pitch prototype: March 2025)', team: 'Design, front-end, back-end & Power BI teams', platform: 'Web platform with Power BI reports' },
+    meta: { timeline: '2024 — 2025 (weekend pitch prototype: March 2025)', team: 'Design, front-end, back-end & Power BI teams', platform: 'Web platform with Power BI reports' },
     metrics: [
       { value: '1 weekend', label: 'From brief to a pitch-ready prototype' },
       { value: '4', label: 'Modules in the prototype: Cockpit, Modelling, Execution, Simulation' },
@@ -173,17 +177,20 @@ export const projects = [
     ],
     decisions: [
       'Kept the prototype brand-neutral in the agency’s design system so one build could serve many pitches.',
-      'TODO: The fallback behaviour you defined for when the assistant can’t answer from its knowledge base.',
+      'Designed honest failure states: when the assistant doesn’t know, it says so (“I’m sorry, I can’t answer that yet, I’m still learning”) and, depending on context, offers to connect the user with a customer-care agent.',
       'Put an AI summary next to every model output, so non-analysts can read recommendations in plain language.',
       'Held the screencast to 2:20 — long enough to show the full flow, short enough for a pitch slot.'
     ],
     outcomes: [
       'Prototype presented to a global fast-food brand; the client reported it went really well.',
-      'Recognised by WNS’s Chief Growth Officer and two Corporate Vice Presidents for delivery over the weekend while travelling.',
-      'TODO: Any other outcomes from your ongoing delivery on this account.'
+      'Recognised by WNS’s Chief Growth Officer and two Corporate Vice Presidents for delivery over the weekend while travelling.'
     ],
     quote: { text: 'Thanks so much. I just presented it to [the brand] and it went really well!', by: 'Global Chief Data Officer, Mediaplus' },
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'In client delivery, speed and judgment beat polish: a clear prototype by Monday is worth more than a perfect one next week.',
+      'Share drafts early. The brand-neutral pivot only cost a night because we showed first screens on day one.',
+      'Conversational AI needs designed failure states. An honest ‘I don’t know’ plus a route to a human keeps users’ trust.'
+    ]
   },
   {
     slug: 'cargo-intake-calculator',
@@ -196,7 +203,7 @@ export const projects = [
     tags: ['Logistics', 'Enterprise', 'Redesign'],
     hue: 0.55,
     summary: 'Redesigned a maritime cargo-intake and stowage-planning tool into a guided, real-time workflow, cutting processing time by 60%.',
-    meta: { timeline: 'Jun 2023 — Jan 2024', team: 'TODO: Team size & roles', platform: 'Web application' },
+    meta: { timeline: 'Jun 2023 — Jan 2024', team: '5', platform: 'Web application' },
     metrics: [
       { value: '60%', label: 'Less processing time per stowage plan' },
       { value: '10', label: 'Safety and loading limits checked live on one screen' },
@@ -225,10 +232,165 @@ export const projects = [
     ],
     outcomes: [
       'Cut processing time by 60%.',
-      'Replaced scattered spreadsheets and tools with one guided workflow.',
-      'TODO: Adoption or rollout details.'
+      'Replaced scattered spreadsheets and tools with one guided workflow.'
     ],
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'For expert users, density is a feature: design for speed, keyboards and at-a-glance safety signals, not simplicity for its own sake.',
+      'Breaking complex calculation logic into prioritised tiers let engineering ship value early without compromising safety checks.'
+    ]
+  },
+  {
+    slug: 'cx-analytics',
+    title: 'Customer Experience Analytics',
+    client: 'Centrica (UK)',
+    company: 'WNS Global Services',
+    year: 'TODO: Year',
+    role: 'Product Manager',
+    type: 'work',
+    tags: ['AI', 'Analytics', 'Power BI', 'Contact centre'],
+    hue: 0.66,
+    summary: 'A Power BI experience for auditing contact-centre conversations: volumes, CSAT, NPS and sentiment at a glance, and an AI summary of any individual call one click away.',
+    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'Power BI, ticketing-system APIs' },
+    metrics: [
+      { value: '1 click', label: 'From company-wide KPIs to a single call’s AI summary' },
+      { value: '4', label: 'Views: executive, experience summary, interaction analysis, detail table' },
+      { value: 'AI', label: 'Call summaries, intent, sentiment and tonality for every interaction' }
+    ],
+    cover: 'assets/work/cx-analytics/cover.jpg',
+    images: [
+      { src: 'assets/work/cx-analytics/cx-summary.jpg', caption: 'Experience summary: volumes, sentiment, NPS and the words customers use most' },
+      { src: 'assets/work/cx-analytics/interaction.jpg', caption: 'Interaction analysis: AI summary, intent, tonality and vulnerability flags for one call' }
+    ],
+    context: 'The client’s customer-care teams handle a high volume of calls. Business users wanted to understand the customer experience across those calls and audit individual conversations without listening to recordings.',
+    problem: 'Call data sat in the ticketing system and the recordings themselves. There was no single view of how many calls came in, how customers felt, or what an individual call was actually about.',
+    contribution: [
+      'Analysed the requirement and wrote the PRD.',
+      'Defined the KPIs: calls received, CSAT, NPS, sentiment, call duration, turnaround time and most frequent words.',
+      'Designed the audit flow from aggregate KPIs down to a single interaction.',
+      'Wrote design guidelines for each view so the dashboards stay consistent as they grow.'
+    ],
+    process: [
+      { step: 'Requirement', text: 'Worked out what business users need to judge call experience, and which questions they ask first.' },
+      { step: 'PRD', text: 'Specified KPIs, data sources (ticketing-system APIs into Power BI), views and drill-downs.' },
+      { step: 'Design', text: 'Executive page, experience summary, interaction analysis and a detail table, each with its own design guideline.' },
+      { step: 'Build', text: 'Power BI on ticketing data, with AI-generated summaries of call recordings.' }
+    ],
+    decisions: [
+      'Audit by sampling: pick any call to see who called, the agent and their profile, the AI summary, feedback score, turnaround time and duration.',
+      'Surface vulnerability and complaint flags on each interaction, so sensitive calls are never buried in averages.',
+      'Show customer and agent tonality side by side, to separate a difficult customer from a poor conversation.'
+    ],
+    outcomes: [
+      'Business users can audit call experience without listening to recordings.',
+      'TODO: Adoption or impact numbers, if any.'
+    ],
+    learnings: [
+      'Analytics about people needs both altitudes: aggregate KPIs for trends, and a single conversation to understand why.',
+      'Write the PRD around the questions users ask, not around the data that happens to be available.'
+    ]
+  },
+  {
+    slug: 'hcp-segmentation',
+    title: 'HCP Segmentation Platform',
+    client: 'Life sciences & medtech sales teams (incl. Zimmer)',
+    company: 'WNS Global Services',
+    year: 'TODO: Year',
+    role: 'Product Manager',
+    type: 'work',
+    tags: ['Life sciences', 'Analytics', 'Prototype'],
+    hue: 0.45,
+    summary: 'A guided tool for sales-operations teams to segment healthcare professionals and plan field-force calls, prototyped for a WNS offering and tailored for Zimmer.',
+    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'Web application (Salesforce Lightning design system)' },
+    metrics: [
+      { value: '7 steps', label: 'Guided flow from cycle setup to final segments' },
+      { value: 'v1 → v2', label: 'Prototype iterations' },
+      { value: 'Built-in', label: 'Data-quality checks before any segmentation runs' }
+    ],
+    cover: 'assets/work/hcp-segmentation/cover.jpg',
+    images: [{ src: 'assets/work/hcp-segmentation/import.jpg', caption: 'Importing territory data with a downloadable template' }],
+    context: 'Pharma and medtech companies segment healthcare professionals (HCPs) to decide where sales reps spend their time. The work usually lives in spreadsheets owned by a few analysts.',
+    problem: 'Segmentation cycles were manual, error-prone and hard to repeat: duplicate records and mismatched rep names silently skewed results, and each cycle started from scratch.',
+    contribution: [
+      'Shaped the end-to-end workflow and the prototype through two iterations.',
+      'Defined the data-quality checks that run before segmentation.',
+      'TODO: Anything else you owned (client demos, requirements, team).'
+    ],
+    process: [
+      { step: 'Set up', text: 'Create a cycle, choose a scenario and import territory, rep and HCP data from a template.' },
+      { step: 'Check', text: 'Automatic checks: duplicate records, similar rep names and HCP counts per territory.' },
+      { step: 'Plan', text: 'Set call capacity and products in scope.' },
+      { step: 'Segment', text: 'Bucket HCPs by patient volume and product usage, then review segments at customer level and export.' }
+    ],
+    decisions: [
+      'A step-by-step stepper instead of one big form, so non-analysts can run a cycle without training.',
+      'Data checks are a mandatory step, because bad input is the biggest risk in segmentation.',
+      'Built on a standard enterprise design system so the prototype could move to build quickly.'
+    ],
+    outcomes: ['Two prototype iterations, including a version tailored for Zimmer.', 'TODO: What happened next (pilot, build, client feedback).'],
+    learnings: [
+      'Make data quality visible before analysis; it saves the most painful rework later.',
+      'Guided flows make complex analytical setups approachable for people who aren’t analysts.'
+    ]
+  },
+  {
+    slug: 'bi-marketplace',
+    title: 'BI Marketplace & Digital AI Insights',
+    client: 'WNS Analytics (internal offering)',
+    company: 'WNS Global Services',
+    year: 'TODO: Year',
+    role: 'Product Manager',
+    type: 'work',
+    tags: ['AI', 'Data & BI', 'Concept'],
+    hue: 0.6,
+    summary: 'A concept for a self-serve BI marketplace and an AI insights layer that takes business users from question to insight to decision.',
+    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'Web portal over Power BI' },
+    metrics: [
+      { value: '3', label: 'Entry points: my workspace, data marketplace, recommendations' },
+      { value: '7', label: 'AI insight capabilities, from key influencers to drill-through analysis' }
+    ],
+    cover: 'assets/work/bi-marketplace/cover.jpg',
+    images: [{ src: 'assets/work/bi-marketplace/ai-insights.jpg', caption: 'Digital AI Insights: time to insight, to analysis, to decision' }],
+    context: 'Enterprises accumulate hundreds of reports across teams, and most business users can’t find the one they need, or don’t know it exists.',
+    problem: 'Reports were hard to discover, hard to trust and disconnected from the decisions they should support.',
+    contribution: ['Shaped the concept and information architecture.', 'TODO: Your specific role and who it was presented to.'],
+    process: [
+      { step: 'Frame', text: 'Treat reports as products in a catalogue: searchable, owned, with freshness and usage visible.' },
+      { step: 'Structure', text: 'Three entry points: a personal workspace, a shared data marketplace and AI recommendations.' },
+      { step: 'Augment', text: 'An AI layer with self-serve questions, key influencers, trend, drill-down and drill-through analysis.' }
+    ],
+    decisions: [
+      'Show freshness and usage on every report card, so users know what to trust.',
+      'Recommendations sit alongside search, so users discover reports they didn’t know to ask for.'
+    ],
+    outcomes: ['TODO: Where this concept went (pitch, pilot, client adoption).'],
+    learnings: ['Discoverability is a product problem: users can’t use reports they can’t find.']
+  },
+  {
+    slug: 'suncorp',
+    title: 'Renewal & New Business Dashboard',
+    client: 'Suncorp (Australia)',
+    company: 'WNS Global Services',
+    year: '2025',
+    role: 'Product Manager',
+    type: 'work',
+    tags: ['Insurance', 'Data & BI', 'Pitch'],
+    hue: 0.15,
+    summary: 'A pitch dashboard for leadership at an Australian insurer: I gathered the requirements and designed a view that explains liability renewal and new-business performance at a glance.',
+    meta: { timeline: 'Early 2025', team: 'TODO: Team size', platform: 'Dashboard prototype' },
+    metrics: [{ value: '9', label: 'Headline KPIs, from renewal rate to average written premium' }],
+    cover: 'assets/work/suncorp/cover.jpg',
+    images: [{ src: 'assets/work/suncorp/filters.jpg', caption: 'Filter panel for slicing by policy attributes' }],
+    context: 'WNS was pitching analytics services to Suncorp’s leadership.',
+    problem: 'Leadership needed to see, in one view, how liability renewals and new business were performing, and what the metrics meant.',
+    contribution: ['Collected the requirements.', 'Designed the dashboard and the story behind each metric for the pitch.'],
+    process: [
+      { step: 'Gather', text: 'Collected the metrics leadership cared about.' },
+      { step: 'Design', text: 'Headline KPIs on top, then renewal volume vs premium, rate trends and breakdowns by band, state and industry.' },
+      { step: 'Explain', text: 'Walked leadership through what each metric means and why it matters.' }
+    ],
+    decisions: ['Lead with nine headline KPIs, then trends, then breakdowns: the order an executive reads.'],
+    outcomes: ['Dashboard presented to leadership as part of the pitch.'],
+    learnings: ['For an executive pitch, choose the few metrics that tell the story, and explain each one plainly.']
   },
   {
     slug: 'identifor',
@@ -258,7 +420,9 @@ export const projects = [
     ],
     decisions: ['TODO: How you balanced engagement with accessibility and compliance.'],
     outcomes: ['Cut drop-offs and bounce rate by 40%.', 'Met HIPAA and WCAG accessibility requirements.'],
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'In healthcare, accessibility and compliance are design constraints from day one, and they can coexist with engagement.'
+    ]
   },
   {
     slug: 'sham-stage',
@@ -286,7 +450,9 @@ export const projects = [
     ],
     decisions: ['Chose a local LLM over a hosted API so practice sessions stay private.', 'TODO: Other key decision.'],
     outcomes: ['TODO: Current status, early users or test results.'],
-    learnings: ['TODO: What you have learned so far.']
+    learnings: [
+      'Privacy can be a product feature: running the model locally builds trust for sensitive rehearsals.'
+    ]
   },
   {
     slug: 'belvere-designs',
@@ -313,7 +479,10 @@ export const projects = [
     ],
     decisions: ['Used AI-assisted development to compress a multi-week build into one week.', 'TODO: Why WhatsApp was the right channel for these customers.'],
     outcomes: ['Live site at belveredesigns.com.', 'Cut lead response time from 10 minutes to under a minute.'],
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'AI-assisted development compresses delivery from weeks to days, freeing time for the decisions that need judgment.',
+      'Speed to lead matters: the fastest reply often wins the customer.'
+    ]
   },
   {
     slug: 'verizon',
@@ -339,7 +508,9 @@ export const projects = [
     ],
     decisions: ['Validated with prototypes before build to reduce costly rework.', 'TODO: Other key decision.'],
     outcomes: ['TODO: Measurable outcome for Verizon.'],
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'Prototyping before build is the cheapest way to de-risk modernising legacy tools.'
+    ]
   },
   {
     slug: 'terminix',
@@ -365,7 +536,9 @@ export const projects = [
     ],
     decisions: ['TODO: Key decision.'],
     outcomes: ['Lifted user satisfaction scores by 35%.'],
-    learnings: ['TODO: What you learned.']
+    learnings: [
+      'Combine what users say (research) with what they do (telemetry) before redesigning a flow.'
+    ]
   },
   {
     slug: 'companion',
@@ -443,7 +616,7 @@ export const projects = [
     ],
     decisions: ['Stopped before investing in engineering, because the evidence did not support the core loop.'],
     outcomes: ['Avoided building a product the market had not validated.', 'TODO: Specific friction found.'],
-    learnings: ['Knowing when to stop is a product skill. TODO: expand.']
+    learnings: ['Knowing when to stop is a product skill. Interviews and prototypes gave the evidence before engineering money was spent.']
   }
 ];
 
