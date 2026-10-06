@@ -393,6 +393,121 @@ export const projects = [
     learnings: ['For an executive pitch, choose the few metrics that tell the story, and explain each one plainly.']
   },
   {
+    slug: 'verizon',
+    title: 'B2B Tools Modernisation',
+    client: 'Verizon',
+    company: 'Brillio Technologies',
+    year: '2022 — 2023',
+    role: 'Senior Product Designer',
+    type: 'work',
+    tags: ['Telecom', 'Enterprise', 'B2B'],
+    hue: 0.95,
+    summary: 'Modernised legacy B2B tools for Verizon, validating flows with 100+ screen prototypes before build.',
+    meta: { timeline: 'TODO: Duration', team: 'Product and engineering leads', platform: 'TODO: Web' },
+    metrics: [{ value: '100+', label: 'Screens prototyped and validated' }],
+    context: 'TODO: Which Verizon B2B tools and who uses them.',
+    problem: 'TODO: What made the legacy tools hard to use or maintain.',
+    contribution: ['Partnered with product and engineering leads to modernise legacy B2B tools.', 'Shipped 100+ screen prototypes across Agile sprints to validate flows before build.'],
+    process: [
+      { step: 'Discover', text: 'TODO: How you understood the legacy workflows.' },
+      { step: 'Prototype', text: 'Built 100+ screen prototypes across Agile sprints.' },
+      { step: 'Validate', text: 'Validated flows before engineering built them.' },
+      { step: 'Deliver', text: 'TODO: How the work was handed off and shipped.' }
+    ],
+    decisions: ['Validated with prototypes before build to reduce costly rework.', 'TODO: Other key decision.'],
+    outcomes: ['TODO: Measurable outcome for Verizon.'],
+    learnings: [
+      'Prototyping before build is the cheapest way to de-risk modernising legacy tools.'
+    ]
+  },
+  {
+    slug: 'terminix',
+    title: 'Onboarding Redesign',
+    client: 'Terminix (USA)',
+    company: 'Brillio Technologies',
+    year: '2022 — 2023',
+    role: 'Senior Product Designer',
+    type: 'work',
+    tags: ['Consumer', 'Onboarding', 'Research'],
+    hue: 0.42,
+    summary: 'Redesigned onboarding using user research and product telemetry, lifting user satisfaction scores by 35%.',
+    meta: { timeline: 'TODO: Duration', team: 'TODO: Team size & roles', platform: 'TODO: Web / app' },
+    metrics: [{ value: '+35%', label: 'User satisfaction' }],
+    context: 'TODO: What the Terminix product is and who onboards into it.',
+    problem: 'TODO: What research and telemetry showed was going wrong in onboarding.',
+    contribution: ['Redesigned onboarding using user research and product telemetry.'],
+    process: [
+      { step: 'Research', text: 'TODO: Research methods used.' },
+      { step: 'Analyse', text: 'TODO: What the product telemetry revealed.' },
+      { step: 'Redesign', text: 'TODO: What changed in the onboarding flow.' },
+      { step: 'Measure', text: 'User satisfaction scores rose by 35%.' }
+    ],
+    decisions: ['TODO: Key decision.'],
+    outcomes: ['Lifted user satisfaction scores by 35%.'],
+    learnings: [
+      'Combine what users say (research) with what they do (telemetry) before redesigning a flow.'
+    ]
+  },
+  {
+    slug: 'carevisor',
+    title: 'CareVisor',
+    client: 'Samsung — Virtual Care Platform (with Accenture)',
+    company: 'Ameex Technologies',
+    year: '2018 — 2019',
+    role: 'Lead UX/UI Designer',
+    type: 'work',
+    tags: ['Healthcare', 'HIPAA', 'Virtual assistant', 'IoT', '0 → 1'],
+    hue: 0.62,
+    summary: 'A virtual care companion that helps people follow their physician’s care plan for chronic conditions and post-acute care. I led design from day zero across 2 mobile apps and 6 web portals.',
+    meta: { timeline: 'Jul 2018 — 2019', team: 'Led 5 designers, alongside client, Accenture and engineering teams', platform: 'iOS & Android apps, 6 web portals, connected health devices' },
+    metrics: [
+      { value: '2 + 6', label: 'Mobile apps and web portals designed' },
+      { value: '150+', label: 'Screens across two user roles' },
+      { value: '50+ / 12', label: 'People surveyed / interviewed' },
+      { value: '4', label: 'Patient journeys co-created in a 3-day workshop' }
+    ],
+    cover: 'assets/work/carevisor/cover.jpg',
+    images: [
+      { src: 'assets/work/carevisor/ui-designs.jpg', caption: 'High-fidelity screens: daily care cards, measurements, trends and the avatar assistant' },
+      { src: 'assets/work/carevisor/task-flows.jpg', caption: 'Task flows: talking to the avatar, managing activities, medications and the care circle' },
+      { src: 'assets/work/carevisor/sketches-wireframes.jpg', caption: 'From whiteboard sketches to wireframes' },
+      { src: 'assets/work/carevisor/usability-test.jpg', caption: 'Usability test findings and the redesigned home screen' }
+    ],
+    context: 'Managing a chronic condition or recovering from a procedure is complicated: what to take, what to avoid, what to measure, when to call. CareVisor was built for Samsung’s virtual care programme to improve patient outcomes at the same or lower cost, by helping patients stick to their care plan.',
+    problem: 'Patients drift from their care plans for two main reasons: they forget, or they don’t understand why it matters. Every care plan is different, readings come from many devices, and an abnormal value or a missed medication needs the right response at the right time, without nagging people until they tune out.',
+    contribution: [
+      'Involved from day zero: gathered requirements with the client and partner teams.',
+      'Owned design for 2 mobile apps and 6 web portals, from analysis to handoff.',
+      'Led and distributed work across a team of 5 designers.',
+      'Ran the research: survey, interviews, personas, information architecture and task flows.',
+      'Set up the design-handoff process (layouts, flows, interactions, validations) and ran UI audits before release.'
+    ],
+    process: [
+      { step: 'Co-create', text: 'A 3-day collaboration workshop with the client and Accenture to map four patient journeys: onboarding, personalisation, condition management and support.' },
+      { step: 'Research', text: 'Surveyed 50+ potential users aged 20–60, interviewed 12 of them, and built four personas from the findings.' },
+      { step: 'Define', text: 'Information architecture and task flows built around the care plan: parameters to measure, actions to complete and symptoms to watch out for.' },
+      { step: 'Design', text: 'Sketches, then wireframes, then 150+ high-fidelity screens, with a virtual avatar assistant and voice input for measurements.' },
+      { step: 'Test', text: 'Usability tests with people new to the product, then a redesign of the home screen based on what we saw.' }
+    ],
+    decisions: [
+      'Nudges that match urgency: a reminder can escalate from a notification to a text, a call, the patient’s care circle and finally the care team. The sequence is configurable for each care-plan item, and reminders are consolidated so patients don’t tune out.',
+      'Grouped the home screen’s care cards by type and time, showing at most three, after testing showed people struggled to find upcoming vs missed tasks in a long list.',
+      'Rolling onboarding: get patients in quickly, then add medications, devices, care circle and avatar over time, because testing showed long setups made people hesitate.',
+      'Life-threatening symptoms are confirmed with the patient and routed to a clinical call centre rather than handled by the bot.',
+      'One shared vocabulary across all portals (client, practice, care circle), which also kept the documentation ready for a HIPAA audit.'
+    ],
+    outcomes: [
+      'Designed and handed off 2 mobile apps and 6 web portals (150+ screens).',
+      'Home screen redesigned from usability-test evidence before development started.',
+      'TODO: Pilot or launch outcomes, if known.'
+    ],
+    learnings: [
+      'In healthcare, the hardest design problem is restraint: nudge enough to help, never so much that people stop listening.',
+      'One usability session before build is cheaper than any redesign after it.',
+      'When several organisations share a product, a shared vocabulary matters as much as the interface.'
+    ]
+  },
+  {
     slug: 'identifor',
     title: 'Identifor',
     client: 'Identifor',
@@ -400,29 +515,140 @@ export const projects = [
     year: 'TODO: Year',
     role: 'Product Engineer & UX Designer',
     type: 'work',
-    tags: ['Healthcare', 'HIPAA', 'Accessibility', 'Gamification'],
+    tags: ['Healthcare', 'Accessibility', 'Gamification', 'Autism'],
     hue: 0.32,
-    summary: 'Rebuilt an enterprise healthcare assessment funnel into a gamified onboarding journey, cutting drop-offs and bounce rate by 40%.',
-    meta: { timeline: 'TODO: Duration', team: 'TODO: Team size & roles', platform: 'TODO: Web / iOS' },
+    summary: 'A games-based platform that helps young people with autism discover their strengths. I rebuilt its assessment funnel into a gamified onboarding journey, cutting drop-offs and bounce rate by 40%.',
+    meta: { timeline: 'TODO: Duration', team: 'TODO: Team size & roles', platform: 'Web, mobile apps, games and dashboards' },
     metrics: [
       { value: '40%', label: 'Fewer drop-offs and lower bounce rate' },
       { value: 'HIPAA', label: 'Compliant end-to-end delivery' },
       { value: 'WCAG', label: 'Accessibility requirements met' }
     ],
-    context: 'TODO: What Identifor is and who it serves.',
-    problem: 'Users were dropping off during the assessment funnel before reaching value. TODO: add detail.',
-    contribution: ['Owned end-to-end delivery, meeting HIPAA and WCAG accessibility requirements.', 'Rebuilt the user assessment funnel into a gamified onboarding journey.'],
+    images: [{ src: 'assets/work/identifor/portfolio-slide.jpg', caption: 'Identifor ecosystem: games, web, dashboards and analytics' }],
+    context: 'Identifor helps individuals with autism, usually in their high-school years, identify their abilities, skills and interests by playing games. Game performance maps to cognitive strengths and interests that users and families can explore.',
+    problem: 'New users didn’t understand what the platform was for or why they should share personal details. Once in, they faced a long, unordered list of games, with no sense of progress towards a complete profile, so many dropped off before seeing any value.',
+    contribution: [
+      'Owned end-to-end delivery, meeting HIPAA and WCAG accessibility requirements.',
+      'Rebuilt the assessment funnel into a gamified onboarding journey.',
+      'Worked across the wider ecosystem: games, web, apps, analytics and dashboards.'
+    ],
     process: [
-      { step: 'Discover', text: 'TODO: Where in the funnel users dropped off and why.' },
-      { step: 'Define', text: 'TODO: Why gamification was the right answer.' },
-      { step: 'Build', text: 'Shipped a gamified onboarding journey within HIPAA and WCAG constraints.' },
+      { step: 'Understand', text: 'Mapped the first-time journey and where it lost people: unclear value, early data requests and too many choices.' },
+      { step: 'Simplify', text: 'Plainer language for concepts like executive functions, and a clear link between playing games and learning about yourself.' },
+      { step: 'Gamify', text: 'Turned the assessment into a guided onboarding with visible progress towards a complete profile.' },
       { step: 'Measure', text: 'Drop-offs and bounce rate fell by 40%.' }
     ],
-    decisions: ['TODO: How you balanced engagement with accessibility and compliance.'],
+    decisions: [
+      'Show progress towards profile completion, so every game feels like a step towards a goal.',
+      'Guide users to the next game instead of showing every game at once.',
+      'Accessibility and compliance as design constraints from day one, not a final check.'
+    ],
     outcomes: ['Cut drop-offs and bounce rate by 40%.', 'Met HIPAA and WCAG accessibility requirements.'],
-    learnings: [
-      'In healthcare, accessibility and compliance are design constraints from day one, and they can coexist with engagement.'
-    ]
+    learnings: ['In healthcare, accessibility and compliance are design constraints from day one, and they can coexist with engagement.', 'For neurodiverse users, clarity beats cleverness: plain words, one next step, visible progress.']
+  },
+  {
+    slug: 'companion',
+    title: 'Companion',
+    client: 'Identifor',
+    company: 'Ameex Technologies',
+    year: 'TODO: Year',
+    role: 'Product Engineer & UX Designer',
+    type: 'work',
+    tags: ['Healthcare', 'Virtual assistant', 'Mobile'],
+    hue: 0.65,
+    summary: 'A mobile companion for individuals with autism, driven by a virtual personal assistant, that helps them keep track of events, daily routines and medication.',
+    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'iOS & Android' },
+    metrics: [{ value: 'Assistant-led', label: 'App driven by a virtual personal assistant' }],
+    images: [{ src: 'assets/work/companion/portfolio-slide.jpg', caption: 'Companion app with its virtual personal assistant' }],
+    context: 'Alongside its assessment platform, Identifor wanted to support people with autism in everyday life, not only in discovering their strengths.',
+    problem: 'Keeping track of events, routines and medication is hard for many people with autism, and generic reminder apps are too busy and too abstract to help.',
+    contribution: ['TODO: What you owned on Companion (research, flows, UI, delivery).'],
+    process: [
+      { step: 'Define', text: 'Core jobs: track events, follow routines, stay on top of medication.' },
+      { step: 'Design', text: 'Put a friendly virtual assistant at the centre, so the app talks the user through each task.' },
+      { step: 'Build', text: 'TODO: How it was built and tested.' }
+    ],
+    decisions: ['Lead with an assistant rather than menus, to make the app feel supportive instead of administrative.'],
+    outcomes: ['TODO: Launch or usage outcomes.'],
+    learnings: ['A consistent, friendly guide lowers the effort of every task for users who find interfaces overwhelming.']
+  },
+  {
+    slug: 'roh',
+    title: 'Ring of Honor',
+    client: 'Ring of Honor Wrestling (Sinclair Broadcast Group)',
+    company: 'Ameex Technologies',
+    year: '2017 — 2019',
+    role: 'Product Engineer & UX Designer',
+    type: 'work',
+    tags: ['Media', 'E-commerce', 'Streaming', 'Gamification'],
+    hue: 0.03,
+    summary: 'Rebuilt a professional wrestling company’s website, store and membership club, then took it to iOS, Android and three TV platforms, to turn fans into paying members.',
+    meta: { timeline: 'TODO: Confirm dates (registered-user data: Jul 2017 — Mar 2019)', team: 'TODO: Team size & roles', platform: 'Web (Drupal 7 + Commerce), iOS, Android, Roku, Apple TV, Android TV' },
+    metrics: [
+      { value: '18', label: 'New features the old site didn’t have' },
+      { value: '5', label: 'App platforms: iOS, Android, Roku, Apple TV, Android TV' },
+      { value: '8s+', label: 'Old page-load time the rebuild set out to fix' },
+      { value: '~200k', label: 'Monthly site visits at the start' }
+    ],
+    cover: 'assets/work/roh/cover.jpg',
+    images: [
+      { src: 'assets/work/roh/home-before-after.jpg', caption: 'Home page, before and after' },
+      { src: 'assets/work/roh/ppv-before-after.jpg', caption: 'Pay-per-view page, before and after' },
+      { src: 'assets/work/roh/feature-matrix.jpg', caption: 'Feature matrix: old site vs new site' },
+      { src: 'assets/work/roh/tv-mobile-apps.jpg', caption: 'TV and mobile apps' }
+    ],
+    context: 'Ring of Honor is a US professional wrestling company owned by Sinclair Broadcast Group. Its online revenue came from merchandise, tickets, memberships and pay-per-view.',
+    problem: 'The old site ran on an unsupported platform. Discounts didn’t work, videos were hard to find, search returned obsolete products, pages took more than 8 seconds to load, and fans had nothing to do on the site but read and share.',
+    contribution: [
+      'Shaped the new experience around converting general fans into paying Honor Club members.',
+      'Worked across commerce, video, events, rosters and fan engagement features.',
+      'TODO: Your specific responsibilities on the web and app builds.'
+    ],
+    process: [
+      { step: 'Audit', text: 'Documented the before state: broken commerce workflows, poor search, slow pages and no engagement.' },
+      { step: 'Evaluate', text: 'Compared five platform combinations and chose the one that supported product variants, flexible discounts and SKU-level reporting.' },
+      { step: 'Rebuild', text: 'New store, Honor Club membership with exclusive content, pay-per-view and live streaming, rosters, events and fan games.' },
+      { step: 'Extend', text: 'Apps for iOS, Android, Roku, Apple TV and Android TV, with in-app purchase and casting.' },
+      { step: 'Recommend', text: 'Next steps for analytics goals, personalisation, push notifications and cart-abandonment recovery.' }
+    ],
+    decisions: [
+      'Gamification to keep fans on the site: Pick’em predictions, trivia, polls and points with automated rewards.',
+      'Lightweight custom game modules instead of a heavy off-the-shelf quiz module.',
+      'Mobile-first build, so the same experience could extend to mobile and TV apps.',
+      'Events shown by the visitor’s location, and member-only content to drive Honor Club sign-ups.'
+    ],
+    outcomes: [
+      'Significant increase in site visits and session duration, with a lower bounce rate.',
+      'Better performance and more VIP subscriptions.',
+      'One experience across web, mobile and TV.'
+    ],
+    learnings: ['Engagement features earn their place when they lead somewhere: here, every game and perk pointed fans towards membership.']
+  },
+  {
+    slug: 'chrysalis',
+    title: 'Buzzle AR',
+    client: 'Chrysalis (K-12 education)',
+    company: 'Ameex Technologies',
+    year: 'TODO: Year',
+    role: 'Product Engineer & UX Designer',
+    type: 'work',
+    tags: ['Augmented reality', 'EdTech', 'Mobile'],
+    hue: 0.86,
+    summary: 'An augmented-reality learning app for iOS and Android: students scan a code in their textbook and the page comes alive, with rewards that build good learning habits.',
+    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'iOS & Android (AR)' },
+    metrics: [{ value: 'AR', label: 'Real-world text augmented by scanning a code' }],
+    images: [{ src: 'assets/work/chrysalis/portfolio-slide.jpg', caption: 'Buzzle: scan a code, see the lesson in augmented reality' }],
+    context: 'Chrysalis is a K-12 education company that combines learning content with technology, and wanted technology to extend in-person teaching rather than replace it.',
+    problem: 'Classroom content is static, and holding students’ attention and building consistent study habits is hard.',
+    contribution: ['TODO: What you owned on Buzzle (research, flows, UI, delivery).'],
+    process: [
+      { step: 'Scan', text: 'Students scan a code printed in their textbook.' },
+      { step: 'Augment', text: 'The page comes alive with augmented-reality content that supports what the teacher is teaching.' },
+      { step: 'Reinforce', text: 'Rewards, a progress dashboard and contextual messages encourage good learning habits.' }
+    ],
+    decisions: ['Built around behaviour science: rewards, a dashboard and timely messages to turn one-off wow moments into habits.'],
+    outcomes: ['Launched on iOS and Android.', 'TODO: Adoption or recognition details.'],
+    learnings: ['Novelty gets attention; habits keep it. AR opened the door, and rewards and feedback kept students coming back.']
   },
   {
     slug: 'sham-stage',
@@ -483,113 +709,6 @@ export const projects = [
       'AI-assisted development compresses delivery from weeks to days, freeing time for the decisions that need judgment.',
       'Speed to lead matters: the fastest reply often wins the customer.'
     ]
-  },
-  {
-    slug: 'verizon',
-    title: 'B2B Tools Modernisation',
-    client: 'Verizon',
-    company: 'Brillio Technologies',
-    year: '2022 — 2023',
-    role: 'Senior Product Designer',
-    type: 'work',
-    tags: ['Telecom', 'Enterprise', 'B2B'],
-    hue: 0.95,
-    summary: 'Modernised legacy B2B tools for Verizon, validating flows with 100+ screen prototypes before build.',
-    meta: { timeline: 'TODO: Duration', team: 'Product and engineering leads', platform: 'TODO: Web' },
-    metrics: [{ value: '100+', label: 'Screens prototyped and validated' }],
-    context: 'TODO: Which Verizon B2B tools and who uses them.',
-    problem: 'TODO: What made the legacy tools hard to use or maintain.',
-    contribution: ['Partnered with product and engineering leads to modernise legacy B2B tools.', 'Shipped 100+ screen prototypes across Agile sprints to validate flows before build.'],
-    process: [
-      { step: 'Discover', text: 'TODO: How you understood the legacy workflows.' },
-      { step: 'Prototype', text: 'Built 100+ screen prototypes across Agile sprints.' },
-      { step: 'Validate', text: 'Validated flows before engineering built them.' },
-      { step: 'Deliver', text: 'TODO: How the work was handed off and shipped.' }
-    ],
-    decisions: ['Validated with prototypes before build to reduce costly rework.', 'TODO: Other key decision.'],
-    outcomes: ['TODO: Measurable outcome for Verizon.'],
-    learnings: [
-      'Prototyping before build is the cheapest way to de-risk modernising legacy tools.'
-    ]
-  },
-  {
-    slug: 'terminix',
-    title: 'Onboarding Redesign',
-    client: 'Terminix (USA)',
-    company: 'Brillio Technologies',
-    year: '2022 — 2023',
-    role: 'Senior Product Designer',
-    type: 'work',
-    tags: ['Consumer', 'Onboarding', 'Research'],
-    hue: 0.42,
-    summary: 'Redesigned onboarding using user research and product telemetry, lifting user satisfaction scores by 35%.',
-    meta: { timeline: 'TODO: Duration', team: 'TODO: Team size & roles', platform: 'TODO: Web / app' },
-    metrics: [{ value: '+35%', label: 'User satisfaction' }],
-    context: 'TODO: What the Terminix product is and who onboards into it.',
-    problem: 'TODO: What research and telemetry showed was going wrong in onboarding.',
-    contribution: ['Redesigned onboarding using user research and product telemetry.'],
-    process: [
-      { step: 'Research', text: 'TODO: Research methods used.' },
-      { step: 'Analyse', text: 'TODO: What the product telemetry revealed.' },
-      { step: 'Redesign', text: 'TODO: What changed in the onboarding flow.' },
-      { step: 'Measure', text: 'User satisfaction scores rose by 35%.' }
-    ],
-    decisions: ['TODO: Key decision.'],
-    outcomes: ['Lifted user satisfaction scores by 35%.'],
-    learnings: [
-      'Combine what users say (research) with what they do (telemetry) before redesigning a flow.'
-    ]
-  },
-  {
-    slug: 'companion',
-    title: 'Companion',
-    client: 'TODO: Client',
-    company: 'TODO: Company',
-    year: 'TODO: Year',
-    role: 'TODO: Role',
-    type: 'work',
-    tags: ['TODO: Tags'],
-    hue: 0.65,
-    summary: 'TODO: One-line summary of Companion.',
-    meta: { timeline: 'TODO', team: 'TODO', platform: 'TODO' },
-    metrics: [{ value: 'TODO', label: 'TODO: Key metric' }],
-    context: 'TODO', problem: 'TODO', contribution: ['TODO'],
-    process: [{ step: 'Discover', text: 'TODO' }, { step: 'Define', text: 'TODO' }, { step: 'Build', text: 'TODO' }, { step: 'Measure', text: 'TODO' }],
-    decisions: ['TODO'], outcomes: ['TODO'], learnings: ['TODO']
-  },
-  {
-    slug: 'roh',
-    title: 'ROH',
-    client: 'ROH',
-    company: 'Ameex Technologies',
-    year: 'TODO: Year',
-    role: 'Product Engineer & UX Designer',
-    type: 'work',
-    tags: ['TODO: Tags'],
-    hue: 0.22,
-    summary: 'TODO: One-line summary of the ROH product.',
-    meta: { timeline: 'TODO', team: 'TODO', platform: 'TODO' },
-    metrics: [{ value: 'TODO', label: 'TODO: Key metric' }],
-    context: 'TODO', problem: 'TODO', contribution: ['TODO'],
-    process: [{ step: 'Discover', text: 'TODO' }, { step: 'Define', text: 'TODO' }, { step: 'Build', text: 'TODO' }, { step: 'Measure', text: 'TODO' }],
-    decisions: ['TODO'], outcomes: ['TODO'], learnings: ['TODO']
-  },
-  {
-    slug: 'chrysalis',
-    title: 'Chrysalis AR',
-    client: 'Chrysalis',
-    company: 'Ameex Technologies',
-    year: 'TODO: Year',
-    role: 'Product Engineer & UX Designer',
-    type: 'work',
-    tags: ['Augmented Reality', 'Consumer'],
-    hue: 0.86,
-    summary: 'TODO: One-line summary of the Chrysalis augmented reality product.',
-    meta: { timeline: 'TODO', team: 'TODO', platform: 'TODO: iOS (ARKit?)' },
-    metrics: [{ value: 'TODO', label: 'TODO: Key metric' }],
-    context: 'TODO', problem: 'TODO', contribution: ['TODO'],
-    process: [{ step: 'Discover', text: 'TODO' }, { step: 'Define', text: 'TODO' }, { step: 'Build', text: 'TODO' }, { step: 'Measure', text: 'TODO' }],
-    decisions: ['TODO'], outcomes: ['TODO'], learnings: ['TODO']
   },
   {
     slug: 'petalpost',
