@@ -131,20 +131,20 @@ export const projects = [
     featured: true,
     tags: ['Insurance', 'Data & BI', 'Power BI'],
     hue: 0.58,
-    summary: 'Consolidated 450+ legacy reports from four platforms into 60 self-serve Power BI dashboards, giving leadership a single source of truth.',
-    meta: { timeline: 'TODO: Confirm dates (work files dated Oct — Nov 2024)', team: 'TODO: Team size & roles', platform: 'Power BI on a central data warehouse' },
+    summary: 'Consolidated 450+ legacy reports from six platforms into 60 self-serve Power BI dashboards, giving leadership a single source of truth.',
+    meta: { timeline: 'Nov 2024 — TODO: end date (Phase II ran Aug — Oct 2025)', team: 'TODO: Team size & roles', platform: 'Power BI on a central data warehouse' },
     metrics: [
       { value: '450+ → 60', label: 'Legacy reports consolidated into Power BI dashboards' },
       { value: '87%', label: 'Fewer reports to build and maintain' },
       { value: '120+ hrs', label: 'Analyst time saved every month' },
-      { value: '4 → 1', label: 'Reporting platforms replaced by one central source' }
+      { value: '6 → 1', label: 'Reporting platforms replaced by one central source' }
     ],
     cover: 'assets/work/insurance-reporting/cover.jpg',
     images: [
       { src: 'assets/work/insurance-reporting/summary.jpg', caption: 'Agency performance summary: premium, retention and loss KPIs first' },
       { src: 'assets/work/insurance-reporting/large-loss.jpg', caption: 'Large-loss claims summary with drill-downs' }
     ],
-    context: 'A US regional property and casualty insurer ran its reporting across four platforms: a legacy reporting tool, a MySQL data warehouse, BIRT and its policy administration system. Sales, underwriting, claims and finance each kept their own reports.',
+    context: 'A US regional property and casualty insurer ran its reporting across six platforms, including legacy reporting tools, BIRT, Looker, Crystal Reports, a MySQL data warehouse and its policy administration system. Sales, underwriting, claims and finance each kept their own reports.',
     problem: '450+ reports, many of them near-duplicates, were built and emailed by hand. There was no single source of truth, and leaders could not compare agency, premium and claims performance consistently.',
     contribution: [
       'Involved from day zero and owned the consolidation end to end.',
@@ -156,7 +156,8 @@ export const projects = [
       { step: 'Inventory', text: 'Catalogued every report: platform, usage, frequency, department, delivery method, KPIs, dimensions and complexity. Phase 1 alone covered 180 reports.' },
       { step: 'Rationalise', text: 'Grouped reports that answered the same question. For example, 55 per-agency monthly production and loss reports became one filterable report.' },
       { step: 'Design', text: 'Figma prototypes for summary, group-agent, individual-agent and year-over-year drill-down views, validated with the client before build.' },
-      { step: 'Deliver', text: 'Built in Power BI on one central data source, prioritising the most-used reports first.' }
+      { step: 'Deliver', text: 'Built in Power BI on one central data source, prioritising the most-used reports first.' },
+      { step: 'Extend', text: 'Phase II added lower-priority reports, data-quality and reconciliation checks, an agent book-management view and an executive briefcase dashboard tracked against budget.' }
     ],
     decisions: [
       'One parameterised report instead of dozens of copies: agency, line of business and period become filters, not files.',
@@ -164,7 +165,8 @@ export const projects = [
       'Prioritised by real usage, so the most-used reports moved first and unused ones were retired.'
     ],
     outcomes: [
-      'Consolidated 450+ reports from four platforms into 60 self-serve Power BI dashboards (87% fewer).',
+      'Consolidated 450+ reports from six platforms into 60 self-serve Power BI dashboards (87% fewer).',
+      'Automated monthly sharing of agency production and loss reports with external agencies, replacing manual email distribution.',
       'Gave leadership a single source of truth for agency, premium and claims performance.',
       'Saved an estimated 120+ analyst hours per month.'
     ],
