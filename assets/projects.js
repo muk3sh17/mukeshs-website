@@ -13,7 +13,7 @@ export const projects = [
   {
     slug: 'optima-ai',
     title: 'Optima AI',
-    client: 'UK device lifecycle & claims fulfilment company',
+    client: 'Bamboo Connect (UK)',
     company: 'WNS Global Services',
     year: '2025 — 2026',
     role: 'Product Manager',
@@ -21,7 +21,7 @@ export const projects = [
     featured: true,
     tags: ['AI', 'Enterprise SaaS', 'Insurance', '0 → 1'],
     hue: 0.02,
-    summary: 'A unified operations platform for a UK company that sources, checks and ships replacement devices for insurers. I took it from day zero to production, starting with a completely reinvented quality-check flow that cut QC time by 60%.',
+    summary: 'A unified operations platform for Bamboo Connect, a UK company that sources, checks and ships replacement devices for insurers. I took it from day zero to production, starting with a completely reinvented quality-check flow that cut QC time by 60%.',
     meta: { timeline: 'Oct 2025 — Aug 2026', team: '25+ across engineering, QA, data & design', platform: 'Web platform with scanner, ERP & partner API integrations' },
     metrics: [
       { value: '60%', label: 'Less time to quality-check a device, after redesigning the QC flow' },
@@ -33,9 +33,11 @@ export const projects = [
     images: [
       { src: 'assets/work/optima-ai/claim-validation.jpg', caption: 'Claim validation: device checks, lock status and scheme rules in one view' },
       { src: 'assets/work/optima-ai/fulfilment.jpg', caption: 'Product fulfilment with configurable alternative-device suggestions' },
-      { src: 'assets/work/optima-ai/qc-flow.jpg', caption: 'To-be QC flow, redesigned from the existing multi-team process' }
+      { src: 'assets/work/optima-ai/qc-flow.jpg', caption: 'To-be QC flow, redesigned from the existing multi-team process' },
+      { src: 'assets/work/optima-ai/qc-manager-ia.jpg', caption: 'Information architecture for the QC Manager role' },
+      { src: 'assets/work/optima-ai/automated-claims-flow.jpg', caption: 'Automated claims task flow, from API request to closure' }
     ],
-    context: 'The client buys, tests, grades and ships phones and laptops for the device-protection schemes of a global insurer. Around 14 teams (procurement, warehouse, processing, software, sales, finance, compliance and more) ran the business on spreadsheets, email, WhatsApp and a handful of legacy systems.',
+    context: 'Bamboo Connect buys, tests, grades and ships phones and laptops for the device-protection schemes of a global insurer. Around 14 teams (procurement, warehouse, processing, software, sales, finance, compliance and more) ran the business on spreadsheets, email, WhatsApp and a handful of legacy systems.',
     problem: 'Quality checks for new and graded devices passed through four teams with manual handoffs. Results were recorded in several places, there was no device-level audit trail, and supplier reports were compiled by hand after the fact. Claims fulfilment had the same pattern: fragmented partner integrations, file-based tracking and spreadsheet-driven sourcing.',
     contribution: [
       'Owned vision, roadmap and backlog for the QC and claims modules — roughly 75% of the product scope.',
@@ -46,15 +48,17 @@ export const projects = [
     ],
     process: [
       { step: 'Discover', text: 'As-is workshops for every business line, warehouse tours and stakeholder walkthroughs. I mapped who does what, in which system, and where work breaks.' },
-      { step: 'Define', text: 'Current-vs-future process maps per module, personas for Operator, Team Lead and QC Manager, 150+ user stories and a phased release plan with QC first.' },
+      { step: 'Define', text: 'Current-vs-future process maps per module, six personas (Operator, Team Lead and QC Manager for QC; Claim Supervisor, Scheme Manager and Scheme Operator for claims), screen maps for each role, 150+ user stories and a phased release plan with QC first.' },
       { step: 'Design', text: 'Figma prototypes validated live with the client during the UK visit, plus configurable QC templates and scheme-level claims configuration.' },
-      { step: 'Build', text: 'Agile delivery with a 25+ member team. I aligned the product data model with the client’s ERP partner so every device variant maps cleanly across systems.' },
+      { step: 'Build', text: 'Agile delivery with a 25+ member team. I aligned the product data model with Bamboo’s ERP partner and ran knowledge-transfer sessions on each flow for the engineering team so every device variant maps cleanly across systems.' },
       { step: 'Evolve', text: 'Rule-based automation shipped first; 18+ AI use cases documented where AI can replace manual decisions next.' }
     ],
     decisions: [
       'Redesigned QC from scratch instead of digitising it. Collapsing four teams’ handoffs into one guided, device-level flow is where the 60% time saving came from.',
       'Launched QC first as the pilot: high volume, contained scope and measurable impact before taking on claims.',
       'Made detailed cosmetic-damage counts optional after operators flagged they would slow processing and hurt their KPIs.',
+      'Designed an automated claims path: the system validates the claim, checks stock and suggests alternatives on its own, and people step in only for exceptions.',
+      'Gave every QC batch a visible SLA state (on time, at risk, breached) so managers act before a deadline is missed.',
       'Capped alternative-device suggestions at five, configurable per scheme, so agents get choice without noise.',
       'Rules before AI: structured, auditable workflows create the clean data the AI roadmap depends on.'
     ],
@@ -70,9 +74,67 @@ export const projects = [
     ]
   },
   {
+    slug: 'northern-neck-insurance',
+    title: 'Northern Neck Report Hub',
+    client: 'Northern Neck Insurance (US)',
+    company: 'WNS Global Services',
+    year: '2024 — 2025',
+    role: 'Product Manager',
+    type: 'work',
+    featured: true,
+    tags: ['Insurance', 'Data & BI', 'AI', 'Power BI'],
+    hue: 0.58,
+    summary: 'Turned 450+ legacy reports from six platforms into 60 self-serve Power BI dashboards. Agency reports now send themselves every month, and service agents answer agency questions on the call instead of 3–4 hours later.',
+    meta: { timeline: 'Nov 2024 — Oct 2025', team: 'TODO: Team size & roles', platform: 'Power BI, Power Automate, central data warehouse' },
+    metrics: [
+      { value: '450+ → 60', label: 'Legacy reports consolidated into Power BI dashboards (87% fewer)' },
+      { value: '3–4 hrs → live', label: 'Time for a service agent to pull an agency’s data, now answered during the call' },
+      { value: '120+ hrs', label: 'Analyst time saved every month' },
+      { value: '+6 months', label: 'Engagement extension won on the back of Phase 1' }
+    ],
+    cover: 'assets/work/northern-neck-insurance/cover.jpg',
+    images: [
+      { src: 'assets/work/northern-neck-insurance/report-hub.jpg', caption: 'Report Hub: one entry point to summary, drill-down and detailed views' },
+      { src: 'assets/work/northern-neck-insurance/summary.jpg', caption: 'Agency production & loss report (APLR): KPIs first, details on demand' },
+      { src: 'assets/work/northern-neck-insurance/book-management.jpg', caption: 'Book management: an agent’s whole book of business with alerts' },
+      { src: 'assets/work/northern-neck-insurance/briefcase.jpg', caption: 'Executive briefcase: company KPIs tracked against budget' }
+    ],
+    context: 'Northern Neck Insurance, a US property and casualty insurer, ran its reporting across six platforms: Cloverleaf, BIRT, Looker, Crystal Reports, a MySQL data warehouse and its Guidewire policy system. Sales, underwriting, claims, finance and the agency team each kept their own reports.',
+    problem: '450+ reports, many of them near-duplicates, were built and emailed by hand. There was no single source of truth. When an agency called customer service, agents had to request that agency’s numbers and wait 3–4 hours to answer.',
+    contribution: [
+      'Involved from day zero, through due diligence, discovery and delivery.',
+      'Redesigned the report estate: found similar reports, merged them and cut the total by 87%.',
+      'Wrote the PRD for a customer-experience dashboard built on ticketing-system data.',
+      'Ran client meetings and presentations, managed the delivery team and reported to senior management.',
+      'Oversaw Phase 2 after moving full-time to Optima AI in October 2025.'
+    ],
+    process: [
+      { step: 'Prioritise', text: 'In due diligence, agreed with the client to put the highest-value reports in Phase 1 to fit time and budget, and to move low-priority reports to Phase 2.' },
+      { step: 'Inventory', text: 'Catalogued every report: source platform, usage, frequency, department, delivery method, KPIs, dimensions and complexity. Phase 1 alone covered 180 reports.' },
+      { step: 'Rationalise', text: 'Grouped reports that answered the same question. For example, 55 per-agency monthly production and loss reports became one filterable APLR dashboard.' },
+      { step: 'Design', text: 'Figma prototypes for the Report Hub, summary, group-agent, individual-agent and year-over-year drill-down views, validated with the client before build.' },
+      { step: 'Automate', text: 'Built in Power BI on one central source. A Power Automate flow sends each agency its APLR on the 5th of every month.' }
+    ],
+    decisions: [
+      'One parameterised report instead of dozens of copies: agency, line of business and period become filters, not files.',
+      'Gave customer-service agents direct access to the APLR, filtered by agency ID, so questions get answered while the agency is still on the line.',
+      'Automated monthly distribution from a maintained list of agencies, rather than having someone export and email reports every month.',
+      'AI where it reduces reading: Power BI smart narratives write plain-English summaries on key dashboards.',
+      'Customer-experience dashboard: calls received, CSAT, NPS and frequent words up top. Picking any call opens its details: who called, the agent, an AI summary of the recording, feedback score, turnaround time and duration.'
+    ],
+    outcomes: [
+      'Consolidated 450+ reports from six platforms into 60 self-serve Power BI dashboards (87% fewer).',
+      'Agency reports now arrive automatically on the 5th of every month, with no manual exports.',
+      'Service agents answer agency questions during the call instead of 3–4 hours later.',
+      'Saved an estimated 120+ analyst hours per month.',
+      'Phase 1 delivered on time; the client extended the engagement by six months for Phase 2.'
+    ],
+    learnings: ['TODO: What you learned.']
+  },
+  {
     slug: 'media-intelligence',
     title: 'Media Intelligence Platform',
-    client: 'Global media agency group (Germany)',
+    client: 'Mediaplus (House of Communication), Germany',
     company: 'WNS Global Services',
     year: '2025',
     role: 'Product Manager — client delivery',
@@ -80,7 +142,7 @@ export const projects = [
     featured: true,
     tags: ['GenAI', 'Analytics', 'Client delivery'],
     hue: 0.98,
-    summary: 'A GenAI media-intelligence platform for a global media agency. I led client delivery after launch — redesigns, new reports and urgent requests — including a pitch prototype built over a single weekend.',
+    summary: 'A GenAI media-intelligence platform for Mediaplus, one of Germany’s leading media agencies. I led client delivery after launch — redesigns, new reports and urgent requests — including a pitch prototype built over a single weekend.',
     meta: { timeline: 'TODO: Confirm dates (pitch prototype: March 2025)', team: 'Design, front-end, back-end & Power BI teams', platform: 'Web platform with Power BI reports' },
     metrics: [
       { value: '1 weekend', label: 'From brief to a pitch-ready prototype' },
@@ -91,14 +153,16 @@ export const projects = [
     images: [
       { src: 'assets/work/media-intelligence/modelling.jpg', caption: 'Modelling: recommended media-spend shifts with an AI summary' },
       { src: 'assets/work/media-intelligence/simulation.jpg', caption: 'Simulation: testing budget scenarios before committing spend' },
-      { src: 'assets/work/media-intelligence/audience-builder.jpg', caption: 'AI-assisted audience builder over consumer survey data' }
+      { src: 'assets/work/media-intelligence/audience-builder.jpg', caption: 'AI-assisted audience builder over consumer survey data' },
+      { src: 'assets/work/media-intelligence/self-serve-bi.jpg', caption: 'Self-serve BI: ask business questions in plain language' }
     ],
-    context: 'The client, one of Europe’s leading media agencies, used a GenAI platform to build audiences from consumer survey data, track campaigns and model media spend. Another team designed and built the core product.',
+    context: 'Mediaplus, part of the House of Communication group, used a GenAI platform to build audiences from consumer survey data, track campaigns and model media spend. Another team designed and built the core product.',
     problem: 'After launch, the client needed new reports, redesigns and pitch-ready material on very tight deadlines, delivered across design, front-end, back-end and Power BI teams without breaking the product’s consistency.',
     contribution: [
       'Owned client management, meetings and presentations.',
       'Led redesigns and design support, managing the design team.',
       'Coordinated developers, back-end and Power BI teams for reports integrated into the platform.',
+      'Defined the conversational “ask anything” feature: knowledge base, expected questions, what the bot does when it can’t answer, and its error and default states.',
       'Turned urgent requests into shipped work — including a weekend pitch prototype.'
     ],
     process: [
@@ -109,6 +173,7 @@ export const projects = [
     ],
     decisions: [
       'Kept the prototype brand-neutral in the agency’s design system so one build could serve many pitches.',
+      'TODO: The fallback behaviour you defined for when the assistant can’t answer from its knowledge base.',
       'Put an AI summary next to every model output, so non-analysts can read recommendations in plain language.',
       'Held the screencast to 2:20 — long enough to show the full flow, short enough for a pitch slot.'
     ],
@@ -117,65 +182,13 @@ export const projects = [
       'Recognised by WNS’s Chief Growth Officer and two Corporate Vice Presidents for delivery over the weekend while travelling.',
       'TODO: Any other outcomes from your ongoing delivery on this account.'
     ],
-    quote: { text: 'Thanks so much. I just presented it to [the brand] and it went really well!', by: 'Global Chief Data Officer, client media agency' },
-    learnings: ['TODO: What you learned.']
-  },
-  {
-    slug: 'insurance-reporting',
-    title: 'Insurance Reporting Platform',
-    client: 'US regional property & casualty insurer',
-    company: 'WNS Global Services',
-    year: '2024',
-    role: 'Product Manager',
-    type: 'work',
-    featured: true,
-    tags: ['Insurance', 'Data & BI', 'Power BI'],
-    hue: 0.58,
-    summary: 'Consolidated 450+ legacy reports from six platforms into 60 self-serve Power BI dashboards, giving leadership a single source of truth.',
-    meta: { timeline: 'Nov 2024 — TODO: end date (Phase II ran Aug — Oct 2025)', team: 'TODO: Team size & roles', platform: 'Power BI on a central data warehouse' },
-    metrics: [
-      { value: '450+ → 60', label: 'Legacy reports consolidated into Power BI dashboards' },
-      { value: '87%', label: 'Fewer reports to build and maintain' },
-      { value: '120+ hrs', label: 'Analyst time saved every month' },
-      { value: '6 → 1', label: 'Reporting platforms replaced by one central source' }
-    ],
-    cover: 'assets/work/insurance-reporting/cover.jpg',
-    images: [
-      { src: 'assets/work/insurance-reporting/summary.jpg', caption: 'Agency performance summary: premium, retention and loss KPIs first' },
-      { src: 'assets/work/insurance-reporting/large-loss.jpg', caption: 'Large-loss claims summary with drill-downs' }
-    ],
-    context: 'A US regional property and casualty insurer ran its reporting across six platforms, including legacy reporting tools, BIRT, Looker, Crystal Reports, a MySQL data warehouse and its policy administration system. Sales, underwriting, claims and finance each kept their own reports.',
-    problem: '450+ reports, many of them near-duplicates, were built and emailed by hand. There was no single source of truth, and leaders could not compare agency, premium and claims performance consistently.',
-    contribution: [
-      'Involved from day zero and owned the consolidation end to end.',
-      'Redesigned the report estate: found similar reports, merged them and cut the total.',
-      'Ran client meetings and presentations, and reported progress to senior management.',
-      'Managed the delivery team across design, data and Power BI.'
-    ],
-    process: [
-      { step: 'Inventory', text: 'Catalogued every report: platform, usage, frequency, department, delivery method, KPIs, dimensions and complexity. Phase 1 alone covered 180 reports.' },
-      { step: 'Rationalise', text: 'Grouped reports that answered the same question. For example, 55 per-agency monthly production and loss reports became one filterable report.' },
-      { step: 'Design', text: 'Figma prototypes for summary, group-agent, individual-agent and year-over-year drill-down views, validated with the client before build.' },
-      { step: 'Deliver', text: 'Built in Power BI on one central data source, prioritising the most-used reports first.' },
-      { step: 'Extend', text: 'Phase II added lower-priority reports, data-quality and reconciliation checks, an agent book-management view and an executive briefcase dashboard tracked against budget.' }
-    ],
-    decisions: [
-      'One parameterised report instead of dozens of copies: agency, line of business and period become filters, not files.',
-      'KPI cards first — premium, policies in force, retention and loss ratio — with drill-downs for detail.',
-      'Prioritised by real usage, so the most-used reports moved first and unused ones were retired.'
-    ],
-    outcomes: [
-      'Consolidated 450+ reports from six platforms into 60 self-serve Power BI dashboards (87% fewer).',
-      'Automated monthly sharing of agency production and loss reports with external agencies, replacing manual email distribution.',
-      'Gave leadership a single source of truth for agency, premium and claims performance.',
-      'Saved an estimated 120+ analyst hours per month.'
-    ],
+    quote: { text: 'Thanks so much. I just presented it to [the brand] and it went really well!', by: 'Global Chief Data Officer, Mediaplus' },
     learnings: ['TODO: What you learned.']
   },
   {
     slug: 'cargo-intake-calculator',
     title: 'Cargo Intake Calculator',
-    client: 'Global agribusiness — ocean transportation',
+    client: 'Cargill — Ocean Transportation',
     company: 'WNS Global Services',
     year: '2023 — 2024',
     role: 'Product Manager',
@@ -190,7 +203,7 @@ export const projects = [
       { value: '±0.5%', label: 'Target accuracy for total cargo intake' }
     ],
     cover: 'assets/work/cargo-intake-calculator/cover.jpg',
-    context: 'The ocean transportation team of a global agribusiness plans how much bulk cargo (grain, coal, ore, sugar) each ship can safely carry, and where to put it. Planners worked from ship loading manuals, spreadsheets and separate loading tools, and every vessel’s data came in a different format.',
+    context: 'Cargill’s Ocean Transportation team plans how much bulk cargo (grain, coal, ore, sugar) each ship can safely carry, and where to put it. Planners worked from ship loading manuals, spreadsheets and separate loading tools, and every vessel’s data came in a different format.',
     problem: 'Every stowage plan meant checking up to ten limits — draft, trim, hull bending and shear stress, stability, hold strength, propeller immersion and more — across disconnected tools. Plans were slow to build and hard to verify at a glance.',
     contribution: [
       'Led the product redesign of the intake calculator into a guided, real-time workflow.',
