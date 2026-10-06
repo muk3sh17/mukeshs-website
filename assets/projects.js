@@ -512,22 +512,22 @@ export const projects = [
     title: 'Identifor',
     client: 'Identifor',
     company: 'Ameex Technologies',
-    year: 'TODO: Year',
-    role: 'Product Engineer & UX Designer',
+    year: '2016 — 2017',
+    role: 'Product Lead',
     type: 'work',
     tags: ['Healthcare', 'Accessibility', 'Gamification', 'Autism'],
     hue: 0.32,
     summary: 'A games-based platform that helps young people with autism discover their strengths. I rebuilt its assessment funnel into a gamified onboarding journey, cutting drop-offs and bounce rate by 40%.',
-    meta: { timeline: 'TODO: Duration', team: 'TODO: Team size & roles', platform: 'Web, mobile apps, games and dashboards' },
+    meta: { timeline: '2016 — mid 2017', team: 'Cross-functional: iOS, Android, web, back-end and QA', platform: 'Web, mobile apps, games and dashboards' },
     metrics: [
       { value: '40%', label: 'Fewer drop-offs and lower bounce rate' },
       { value: 'HIPAA', label: 'Compliant end-to-end delivery' },
       { value: 'WCAG', label: 'Accessibility requirements met' }
     ],
-    images: [{ src: 'assets/work/identifor/portfolio-slide.jpg', caption: 'Identifor ecosystem: games, web, dashboards and analytics' }],
     context: 'Identifor helps individuals with autism, usually in their high-school years, identify their abilities, skills and interests by playing games. Game performance maps to cognitive strengths and interests that users and families can explore.',
     problem: 'New users didn’t understand what the platform was for or why they should share personal details. Once in, they faced a long, unordered list of games, with no sense of progress towards a complete profile, so many dropped off before seeing any value.',
     contribution: [
+      'Led the product and the cross-functional team (iOS, Android, web, back-end and QA), working closely with the CEO.',
       'Owned end-to-end delivery, meeting HIPAA and WCAG accessibility requirements.',
       'Rebuilt the assessment funnel into a gamified onboarding journey.',
       'Worked across the wider ecosystem: games, web, apps, analytics and dashboards.'
@@ -551,18 +551,17 @@ export const projects = [
     title: 'Companion',
     client: 'Identifor',
     company: 'Ameex Technologies',
-    year: 'TODO: Year',
-    role: 'Product Engineer & UX Designer',
+    year: '2017 — 2018',
+    role: 'Product Lead',
     type: 'work',
     tags: ['Healthcare', 'Virtual assistant', 'Mobile'],
     hue: 0.65,
     summary: 'A mobile companion for individuals with autism, driven by a virtual personal assistant, that helps them keep track of events, daily routines and medication.',
-    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'iOS & Android' },
+    meta: { timeline: 'Mid 2017 — 2018', team: 'Cross-functional: iOS, Android, web, back-end and QA', platform: 'iOS & Android' },
     metrics: [{ value: 'Assistant-led', label: 'App driven by a virtual personal assistant' }],
-    images: [{ src: 'assets/work/companion/portfolio-slide.jpg', caption: 'Companion app with its virtual personal assistant' }],
     context: 'Alongside its assessment platform, Identifor wanted to support people with autism in everyday life, not only in discovering their strengths.',
     problem: 'Keeping track of events, routines and medication is hard for many people with autism, and generic reminder apps are too busy and too abstract to help.',
-    contribution: ['TODO: What you owned on Companion (research, flows, UI, delivery).'],
+    contribution: ['Led the product and the cross-functional team (iOS, Android, web, back-end and QA), working closely with the client’s CEO.', 'Defined the assistant-led experience for events, routines and medication.'],
     process: [
       { step: 'Define', text: 'Core jobs: track events, follow routines, stay on top of medication.' },
       { step: 'Design', text: 'Put a friendly virtual assistant at the centre, so the app talks the user through each task.' },
@@ -573,12 +572,44 @@ export const projects = [
     learnings: ['A consistent, friendly guide lowers the effort of every task for users who find interfaces overwhelming.']
   },
   {
+    slug: 'valet4you',
+    title: 'Valet4You',
+    client: 'Kunstler Technologies (US)',
+    company: 'Ameex Technologies',
+    year: 'TODO: Year',
+    role: 'TODO: Your role',
+    type: 'work',
+    tags: ['Mobility', 'Operations', 'Mobile', '0 → 1'],
+    hue: 0.72,
+    summary: 'An end-to-end platform for city valet parking: location-aware apps for customers and attendants, plus back-office, monitoring and alerting tools for the people who run the operation.',
+    meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'iOS & Android apps, admin web app' },
+    metrics: [
+      { value: '4', label: 'User groups in one system: customers, attendants, admins, key managers' },
+      { value: 'Geo-driven', label: 'Customer and attendant apps built around location' }
+    ],
+    context: 'Parking in large cities is slow and frustrating. The client set out to rethink the whole valet-parking ecosystem with technology at its core.',
+    problem: 'Customers, valet attendants, admins and key managers each had different jobs, and no single system connected them, so handoffs, staffing and key tracking ran on manual workarounds.',
+    contribution: ['Worked on the product end to end.', 'TODO: Your specific responsibilities.'],
+    process: [
+      { step: 'Map', text: 'Mapped the jobs of each user group: customers requesting and retrieving cars, attendants on the ground, admins and key managers.' },
+      { step: 'Design', text: 'Location-driven mobile apps for customers and attendants; a back-office app for attendance, assignments and payroll.' },
+      { step: 'Control', text: 'Monitoring and alerting apps so admins and key managers can keep the operation efficient.' },
+      { step: 'Build', text: 'Custom workflows for the client’s requirements, kept flexible enough to adapt as the business grew.' }
+    ],
+    decisions: [
+      'One platform for all four user groups, so every handoff — request, assignment, key, return — is tracked in one place.',
+      'Location at the centre of the customer and attendant experience.'
+    ],
+    outcomes: ['TODO: Launch or usage outcomes.'],
+    learnings: ['In operations products, the hidden users (attendants and key managers) decide whether the customer experience works.']
+  },
+  {
     slug: 'roh',
     title: 'Ring of Honor',
     client: 'Ring of Honor Wrestling (Sinclair Broadcast Group)',
     company: 'Ameex Technologies',
     year: '2017 — 2019',
-    role: 'Product Engineer & UX Designer',
+    role: 'Product Designer',
     type: 'work',
     tags: ['Media', 'E-commerce', 'Streaming', 'Gamification'],
     hue: 0.03,
@@ -601,8 +632,7 @@ export const projects = [
     problem: 'The old site ran on an unsupported platform. Discounts didn’t work, videos were hard to find, search returned obsolete products, pages took more than 8 seconds to load, and fans had nothing to do on the site but read and share.',
     contribution: [
       'Shaped the new experience around converting general fans into paying Honor Club members.',
-      'Worked across commerce, video, events, rosters and fan engagement features.',
-      'TODO: Your specific responsibilities on the web and app builds.'
+      'Worked across commerce, video, events, rosters and fan engagement features.'
     ],
     process: [
       { step: 'Audit', text: 'Documented the before state: broken commerce workflows, poor search, slow pages and no engagement.' },
@@ -630,17 +660,16 @@ export const projects = [
     client: 'Chrysalis (K-12 education)',
     company: 'Ameex Technologies',
     year: 'TODO: Year',
-    role: 'Product Engineer & UX Designer',
+    role: 'Design Consultant (AR feature)',
     type: 'work',
     tags: ['Augmented reality', 'EdTech', 'Mobile'],
     hue: 0.86,
     summary: 'An augmented-reality learning app for iOS and Android: students scan a code in their textbook and the page comes alive, with rewards that build good learning habits.',
     meta: { timeline: 'TODO: Dates', team: 'TODO: Team size & roles', platform: 'iOS & Android (AR)' },
     metrics: [{ value: 'AR', label: 'Real-world text augmented by scanning a code' }],
-    images: [{ src: 'assets/work/chrysalis/portfolio-slide.jpg', caption: 'Buzzle: scan a code, see the lesson in augmented reality' }],
     context: 'Chrysalis is a K-12 education company that combines learning content with technology, and wanted technology to extend in-person teaching rather than replace it.',
     problem: 'Classroom content is static, and holding students’ attention and building consistent study habits is hard.',
-    contribution: ['TODO: What you owned on Buzzle (research, flows, UI, delivery).'],
+    contribution: ['Design consultant for the augmented-reality feature: how students scan, what they see, and how it connects to rewards and progress.'],
     process: [
       { step: 'Scan', text: 'Students scan a code printed in their textbook.' },
       { step: 'Augment', text: 'The page comes alive with augmented-reality content that supports what the teacher is teaching.' },
@@ -649,6 +678,41 @@ export const projects = [
     decisions: ['Built around behaviour science: rewards, a dashboard and timely messages to turn one-off wow moments into habits.'],
     outcomes: ['Launched on iOS and Android.', 'TODO: Adoption or recognition details.'],
     learnings: ['Novelty gets attention; habits keep it. AR opened the door, and rewards and feedback kept students coming back.']
+  },
+  {
+    slug: 'epilepsy-diary',
+    title: 'Epilepsy Diary Reports',
+    client: 'Healthcare client',
+    company: 'Ameex Technologies',
+    year: '2019',
+    role: 'UX Designer',
+    type: 'work',
+    tags: ['Healthcare', 'Mobile', 'Data visualisation'],
+    hue: 0.76,
+    summary: 'Redesigned the diary report in an epilepsy app, so patients and carers can read seizures, medicines, moods and side effects on a phone without fighting a table.',
+    meta: { timeline: '2019', team: 'TODO: Team size', platform: 'Mobile app' },
+    metrics: [{ value: '6', label: 'Report sections redesigned: events, seizure types, mood, side effects, medicines, rescue medication' }],
+    cover: 'assets/work/epilepsy-diary/summary.jpg',
+    images: [
+      { src: 'assets/work/epilepsy-diary/mood-side-effects.jpg', caption: 'Mood and side effects: one tap to log, the most important word read first' },
+      { src: 'assets/work/epilepsy-diary/rescue-rx.jpg', caption: 'Medicines and rescue medication as scannable cards' }
+    ],
+    context: 'People living with epilepsy keep a diary of seizures, medicines, moods and side effects, which they and their doctors use to manage the condition.',
+    problem: 'The diary report was a table: on a phone it needed constant horizontal and vertical scrolling, and the information that matters most was the hardest to find.',
+    contribution: ['Designed the low-fidelity wireframes and the reasoning behind every section, ready for client approval before high-fidelity design.'],
+    process: [
+      { step: 'Diagnose', text: 'Identified why the table failed on mobile: scrolling in two directions and no visual priority.' },
+      { step: 'Restructure', text: 'Turned every record into a card, with a summary of events on top and a date switcher.' },
+      { step: 'Prioritise', text: 'Made the key fact in each card — seizure count, side effect, medicine — the largest text.' },
+      { step: 'Prototype', text: 'Clickable prototype for client review.' }
+    ],
+    decisions: [
+      'Cards instead of tables for every record.',
+      'Show a few records first, with “see all” for the full list, to keep the report short.',
+      'Show times of day as icons and text, so taken and missed doses are clear at a glance.'
+    ],
+    outcomes: ['Wireframes and prototype delivered for client approval.'],
+    learnings: ['Health data on a phone has to be read in seconds: decide what matters most and make it the biggest thing on screen.']
   },
   {
     slug: 'sham-stage',
@@ -709,6 +773,82 @@ export const projects = [
       'AI-assisted development compresses delivery from weeks to days, freeing time for the decisions that need judgment.',
       'Speed to lead matters: the fastest reply often wins the customer.'
     ]
+  },
+  {
+    slug: 'modernmoy',
+    title: 'ModernMoy',
+    client: 'Independent (freelance product)',
+    company: 'Independent',
+    year: 'TODO: Year launched',
+    role: 'Founder & Product Manager',
+    type: 'independent',
+    status: 'Live',
+    tags: ['0 → 1', 'Fintech', 'Bilingual', 'Offline-first'],
+    hue: 0.1,
+    summary: 'A product that digitises moy, the Tamil tradition of recording gifts at family functions. It is still running, and has recorded around ₹4 crore in moy.',
+    meta: { timeline: 'TODO: Start date — ongoing', team: 'TODO: Team (freelance)', platform: 'Web portal for moy counters, with an Android app planned in the BRD' },
+    metrics: [
+      { value: '₹4 Cr', label: 'Moy recorded through the product' },
+      { value: 'Live', label: 'Still running successfully' },
+      { value: '2', label: 'Languages: Tamil and English' }
+    ],
+    context: 'In southern Tamil Nadu, moy virundhu is a matter of honour: guests give money at family functions, and both families keep a record so the gift can be returned, with more, at a future function. A single function can involve hundreds or thousands of guests.',
+    problem: 'Moy has always been written by hand in notebooks. Records get lost over the years, totals are hard to reconcile at the end of a function, and finding what you received from a family years ago is painful.',
+    contribution: [
+      'Wrote the BRD from the tradition up, then cut it into a focused MVP PRD.',
+      'Defined the product end to end and took it live.',
+      'TODO: Anything else you ran (sales, operations, team).'
+    ],
+    process: [
+      { step: 'Understand', text: 'Documented how moy works, who records it, and where the notebooks fail.' },
+      { step: 'Scope', text: 'Moved from a full vision (app, portal, website, subscriptions) to an MVP for the moy counter at the function.' },
+      { step: 'Build', text: 'Hosts and functions, then fast guest entry: type part of a mobile number and the guest’s details fill in automatically.' },
+      { step: 'Run', text: 'Printed receipts and messages to guests, end-of-day reports, and live use at functions.' }
+    ],
+    decisions: [
+      'The mobile number is the guest’s identity: entering a few digits suggests existing guests, so repeat guests take seconds.',
+      'Offline-first entry that syncs in the background, because function venues often have poor connectivity.',
+      'Tamil and English from day one, with the moy amount visually distinct from every other field.',
+      'Receipts and confirmation messages, so guests trust that their gift was recorded correctly.'
+    ],
+    outcomes: ['Still running successfully.', 'Around ₹4 crore in moy recorded.'],
+    learnings: ['The best products often digitise a ritual people already trust; respect the tradition and remove only the friction.', 'An MVP shaped around one moment (the moy counter) beat the full vision in getting to real usage.']
+  },
+  {
+    slug: 'squaremart',
+    title: 'SquareMart',
+    client: 'Product design proposal',
+    company: 'Independent',
+    year: '2022',
+    role: 'Product Designer',
+    type: 'independent',
+    tags: ['Retail', 'Concept', 'Mobile'],
+    hue: 0.5,
+    summary: 'A proposal to redefine in-store shopping: your list mapped onto the store, the shortest path between aisles, scan-as-you-shop and no billing queue.',
+    meta: { timeline: '2022', team: 'Solo', platform: 'Mobile app concept' },
+    metrics: [
+      { value: '80%', label: 'Shoppers who use their phone while shopping (desk research)' },
+      { value: '0', label: 'Billing queues in the proposed flow' }
+    ],
+    cover: 'assets/work/squaremart/cover.jpg',
+    images: [{ src: 'assets/work/squaremart/sketches.jpg', caption: 'Paper sketches: store layout, list and scan flows' }],
+    context: 'After the pandemic, almost every retailer offered online shopping, but many people still enjoy going to the store with family. The in-store experience itself had barely changed.',
+    problem: 'In the store, products are hard to find, staff are scarce or don’t speak your language, offers go unnoticed, and the billing queue at busy times can take longer than the shopping.',
+    contribution: ['Did the desk research, defined the use cases and flows, sketched, designed the screens and built a small design system.'],
+    process: [
+      { step: 'Research', text: 'Desk research and personal observation: most people shop from a list, want fresh stock, and lose time in queues.' },
+      { step: 'Define', text: 'Goals: find products fast, see stock and offers, check out without a queue, depend less on staff.' },
+      { step: 'Sketch', text: 'Rough paper sketches of the store layout and flows.' },
+      { step: 'Design', text: 'High-fidelity screens and a design system with list, rack and bill components.' }
+    ],
+    decisions: [
+      '“Smart shop” maps every item on your list to its rack and draws the shortest path through the store.',
+      'Scan each product’s barcode as you pick it, to see details and add it to the cart.',
+      'Picked items turn green and remaining ones stay red, so progress is obvious.',
+      'Pay in the app; staff verify the bill from your history at the exit.'
+    ],
+    outcomes: ['Proposal with end-to-end flows, screens and a design system.'],
+    learnings: ['Start from the moment that hurts most — here, the queue — and design the rest of the journey back from it.']
   },
   {
     slug: 'petalpost',
