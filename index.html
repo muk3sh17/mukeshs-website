@@ -6,54 +6,77 @@
 <title>Mukesh Sankarasetty — AI Product Manager</title>
 <meta name="description" content="Mukesh Sankarasetty is an AI Product Manager in Bangalore who takes products from day zero to production. 10+ years in software across iOS, product design and product management.">
 <meta property="og:title" content="Mukesh Sankarasetty — AI Product Manager">
+<meta property="og:image" content="assets/me/og.jpg">
 <meta property="og:description" content="Case studies in AI-enabled platforms, enterprise SaaS and 0→1 products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="loading" data-page="home">
 <main id="main">
-  <section class="hero hero--home" data-hero-zone>
-    <div class="hero__gl"><canvas id="gl" aria-hidden="true"></canvas><div class="hud" id="hud" aria-label="Featured case studies"></div></div>
-    <div class="hero__copy">
-      <p class="hero__role mono" data-split>AI Product Manager</p>
-      <h1 class="display hero__name" data-hero aria-label="Mukesh Sankarasetty">
+  <section class="stage" data-hero-zone aria-label="Introduction">
+    <div class="stage__word" aria-hidden="true">PRODUCT</div>
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <img class="stage__fallback" src="assets/me/og.jpg" alt="" aria-hidden="true">
+    <div class="stage__bubble mono" aria-hidden="true"></div>
+
+    <div class="stage__copy">
+      <p class="pill pill--glass mono"><span class="dot" aria-hidden="true"></span><span data-scramble>AI Product Manager</span></p>
+      <h1 class="stage__title" data-hero aria-label="Mukesh ships AI products.">
         <span class="line">Mukesh</span>
-        <span class="line">Sankarasetty</span>
+        <span class="line">ships</span>
+        <span class="line"><em>AI products.</em></span>
       </h1>
-      <p class="hero__intro" data-split>I take products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
+      <p class="stage__intro" data-split>Mukesh Sankarasetty takes products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
+      <div class="stage__cta">
+        <a class="pill pill--solid" href="work.html" data-magnetic>See my work <i>&rarr;</i></a>
+        <a class="pill pill--ghost" href="assets/Mukesh_Sankarasetty_Resume.pdf" download data-magnetic>Résumé <i>&darr;</i></a>
+      </div>
     </div>
-    <div class="hero__base">
-      <dl class="hero__facts mono">
-        <div><dt>Experience</dt><dd>10+ years · WNS, Brillio, ZF Wabco, Ameex</dd></div>
-        <div><dt>Location</dt><dd>Bangalore, India</dd></div>
-        <div><dt>Status</dt><dd><span class="status"><i></i>Open to AI PM roles</span></dd></div>
+
+    <aside class="stage__side">
+      <div class="stage__crew">
+        <div class="avatars" id="avatars"></div>
+        <p><b>22 case studies</b><span>From enterprise AI platforms to products I founded.</span></p>
+      </div>
+      <dl class="stage__facts mono">
+        <div><dt>Experience</dt><dd data-scramble>10+ yrs · WNS, Brillio, ZF Wabco, Ameex</dd></div>
+        <div><dt>Based in</dt><dd data-scramble>Bangalore, India</dd></div>
       </dl>
-      <ul class="hero__stats">
-        <li><b>10+</b><span class="mono">Years in software</span></li>
-        <li><b>8+</b><span class="mono">0 → 1 products launched</span></li>
-        <li><b>6</b><span class="mono">AI &amp; GenAI products</span></li>
-        <li><b>6+</b><span class="mono">Industries, from insurance to healthcare</span></li>
-      </ul>
-    </div>
+    </aside>
+
+    <ul class="stage__stats">
+      <li><b>10+</b><span>Years in software</span></li>
+      <li><b>8+</b><span>0 → 1 products</span></li>
+      <li><b>6</b><span>AI &amp; GenAI products</span></li>
+      <li><b>6+</b><span>Industries</span></li>
+    </ul>
+
+    <div class="stage__cards" id="stageCards"></div>
+
+    <a class="badge" href="#contact" aria-label="Open to AI PM roles — get in touch">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="bp" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+        <text><textPath href="#bp">OPEN TO AI PM ROLES • BANGALORE • REMOTE • </textPath></text></svg>
+      <i>&#8599;</i>
+    </a>
   </section>
 
   <section>
-    <span class="label">(01) — In short</span>
+    <span class="label">In short</span>
     <p class="lead" data-scrub>I've built products from three sides — as an iOS developer, a product designer and a product manager. At WNS I took <em>Optima&nbsp;AI</em> from day zero to production, moving 8+ siloed teams onto one platform and designing its AI roadmap.</p>
   </section>
 
   <section>
-    <span class="label">(02) — Selected case studies</span>
+    <span class="label">Selected case studies</span>
     <h2 class="h2" data-split>Selected <em>work</em></h2>
     <p class="body" style="margin:24px 0 clamp(32px,5vw,64px)" data-reveal>Each case study walks through the context, my role, the process, key decisions, outcomes and what I learned.</p>
-    <ul class="plist" id="featured"></ul>
+    <div class="tilt-grid" id="featured"></div>
     <p style="margin-top:48px"><a class="btn" href="work.html" data-magnetic>All case studies <i>&rarr;</i></a></p>
   </section>
 
   <section>
-    <span class="label">(03) — How I work</span>
+    <span class="label">How I work</span>
     <h2 class="h2" data-split style="margin-bottom:clamp(40px,6vw,80px)">From discovery to <em>outcomes</em></h2>
     <div class="steps">
       <div class="step" data-reveal><span class="mono">01</span><h3>Discover</h3><p>Go where the work happens. On Optima AI that meant three weeks onsite with 20+ executives and 8+ operations teams before writing a single story.</p></div>
@@ -66,7 +89,7 @@
   </section>
 
   <section>
-    <span class="label">(04) — Companies &amp; clients</span>
+    <span class="label">Companies &amp; clients</span>
     <div class="marquee" aria-label="Companies and clients: WNS, Bamboo Connect, Northern Neck Insurance, Mediaplus, Cargill, Verizon, Samsung, Terminix, ZF Wabco, Brillio, Identifor, Chrysalis">
       <div class="marquee__track" aria-hidden="true">
         <span>WNS</span><span>Bamboo Connect</span><span>Northern Neck Insurance</span><span>Mediaplus</span><span>Cargill</span><span>Verizon</span><span>Samsung</span><span>Terminix</span><span>ZF Wabco</span><span>Brillio</span><span>Identifor</span><span>Chrysalis</span>
@@ -81,11 +104,25 @@
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
 <script type="module">
-import { init, row } from './assets/site.js';
+import { init, esc } from './assets/site.js';
 import { projects } from './assets/projects.js';
 import './assets/gl.js';
-document.getElementById('featured').innerHTML = projects.filter(p => p.featured).map(row).join('');
+const featured = projects.filter(p => p.featured);
+const withCover = projects.filter(p => p.cover);
+document.getElementById('featured').innerHTML = featured.map((p, i) => `
+  <a class="tilt" href="case.html#${p.slug}" data-tilt data-hue="${p.hue}" data-title="${esc(p.title)}" data-client="${esc(p.client)}">
+    <div class="tilt__img" style="--h:${Math.round(p.hue * 360)}">${p.cover ? `<img src="${esc(p.cover)}" alt="" loading="lazy">` : `<b>${esc(p.title)}</b>`}</div>
+    <div class="tilt__meta"><span class="mono">${String(i + 1).padStart(2, '0')} · ${esc(p.year)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>
+      <span class="tilt__tags mono">${p.tags.slice(0, 3).map(t => `<i>${esc(t)}</i>`).join('')}</span></div>
+    <span class="tilt__go" aria-hidden="true">&rarr;</span>
+  </a>`).join('');
+document.getElementById('stageCards').innerHTML = withCover.slice(0, 3).map(p => `
+  <a class="mini" href="case.html#${p.slug}"><img src="${esc(p.cover)}" alt="" loading="lazy"><span><b>${esc(p.title)}</b><i class="mono">${esc(p.tags[0])}</i></span><em>Go</em></a>`).join('');
+document.getElementById('avatars').innerHTML = withCover.slice(3, 7).map(p => `<img src="${esc(p.cover)}" alt="">`).join('') + '<span class="mono">+15</span>';
 init();
+// the hero card recedes as you scroll past it
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+  gsap.to('.stage', { scale: 0.93, borderRadius: 44, ease: 'none', scrollTrigger: { trigger: '.stage', start: 'top top', end: 'bottom top', scrub: true } });
 </script>
 </body>
 </html>
