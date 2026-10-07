@@ -20,6 +20,15 @@ export const row = (p, i) => `<li data-tags="${esc([p.type === 'work' ? 'Profess
     <span class="prow__year mono">${txt(p.year)}</span>
     <span class="prow__arrow" aria-hidden="true">&rarr;</span>
   </a></li>`;
+// Decode effect for mono UI text: characters cycle through glyphs before settling.
+export function scramble(el, dur = 0.9) {
+  if (!el || reduce) return;
+  const final = el.dataset.text ??= el.textContent, glyphs = '!<>-_/[]{}=+*^?#01';
+  const o = { p: 0 };
+  gsap.to(o, { p: 1, duration: dur, ease: 'none', onUpdate: () => {
+    el.textContent = [...final].map((c, i) => c === ' ' || i / final.length < o.p ? c : glyphs[(Math.random() * glyphs.length) | 0]).join('');
+  }, onComplete: () => el.textContent = final });
+}
 const roll = (href, label, attrs = '') => `<a class="roll" href="${href}" ${attrs}><span data-t="${label}">${label}</span></a>`;
 
 function chrome() {
@@ -212,6 +221,7 @@ function enter(heroChars) {
       .add(() => heroTweens.forEach(t => t.play()), '<0.3')
       .from('.nav', { yPercent: -100, opacity: 0, duration: 1, ease: 'expo.out' }, '<');
   }
+  document.querySelectorAll('[data-scramble]').forEach((el, i) => gsap.delayedCall(reduce ? 0 : 1.2 + i * 0.12, () => scramble(el)));
   dispatchEvent(new CustomEvent('page:enter'));
 }
 function leave(href) {
