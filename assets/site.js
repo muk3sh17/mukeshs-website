@@ -12,11 +12,13 @@ export const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': 
 export const txt = s => s == null ? '' : String(s).startsWith('TODO') ? `<span class="todo">${esc(s)}</span>` : esc(s);
 export const pad = i => String(i + 1).padStart(2, '0');
 export const row = (p, i) => `<li data-tags="${esc([p.type === 'work' ? 'Professional' : 'Independent', ...p.tags].join('|'))}">
-  <a class="prow" href="case.html#${p.slug}" data-hue="${p.hue}" data-title="${esc(p.title)}" data-client="${esc(p.client)}">
+  <a class="prow" href="case.html#${p.slug}" data-hue="${p.hue}" data-title="${esc(p.title)}" data-client="${esc(p.client)}"${p.cover ? ` data-cover="${esc(p.cover)}"` : ''}>
+    <span class="prow__fill" aria-hidden="true"></span>
     <span class="prow__idx mono">${pad(i)}</span>
     <span class="prow__title">${esc(p.title)}<small>${txt(p.client)} — ${txt(p.role)}</small></span>
     <span class="prow__tags mono">${p.status ? `<span class="chip chip--live">${esc(p.status)}</span>` : ''}${p.tags.map(t => `<span class="chip">${txt(t)}</span>`).join('')}</span>
     <span class="prow__year mono">${txt(p.year)}</span>
+    <span class="prow__arrow" aria-hidden="true">&rarr;</span>
   </a></li>`;
 const roll = (href, label, attrs = '') => `<a class="roll" href="${href}" ${attrs}><span data-t="${label}">${label}</span></a>`;
 
@@ -28,18 +30,19 @@ function chrome() {
     <div class="curtain" aria-hidden="true"><span class="mono">Mukesh Sankarasetty — AI Product Manager</span><div class="curtain__count"></div></div>
     <div class="grain" aria-hidden="true"></div>
     <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>View</span></div></div>
-    <div class="preview" aria-hidden="true"><div class="preview__bg"></div><span class="mono"></span><b></b></div>
+    <div class="preview" aria-hidden="true"><div class="preview__bg"></div><img alt=""><span class="mono"></span><b></b></div>
     <header class="nav">
       <a href="index.html" class="nav__logo">MS&reg;<small>AI Product Manager</small></a>
-      <span class="status mono"><i></i>Open to AI PM roles</span>
+      ${page === 'home' ? '' : '<span class="status mono"><i></i>Open to AI PM roles</span>'}
       <ul class="nav__links mono">
-        <li>${roll('work.html', 'Work', cur('work'))}</li>
         <li>${roll('about.html', 'About', cur('about'))}</li>
+        <li>${roll('work.html', 'Work', cur('work'))}</li>
         <li>${roll('#contact', 'Contact')}</li>
+        <li><a class="nav__cta" href="${RESUME}" download>Resume <span aria-hidden="true">&darr;</span></a></li>
       </ul>
     </header>`);
   document.querySelector('main').insertAdjacentHTML('beforeend', `
-    <section id="contact" class="contact" data-blob="0,0.05,1.1,0.6,0.9">
+    <section id="contact" class="contact">
       <div>
         <span class="label">Contact</span>
         <h2 class="display" data-split>Let's build what <em>AI</em> makes possible.</h2>
@@ -50,7 +53,7 @@ function chrome() {
         </div>
       </div>
       <footer class="footer mono">
-        <ul><li>${roll('work.html', 'Work')}</li><li>${roll('about.html', 'About')}</li><li>${roll(LINKEDIN, 'LinkedIn', 'target="_blank" rel="noopener"')}</li></ul>
+        <ul><li>${roll('about.html', 'About')}</li><li>${roll('work.html', 'Work')}</li><li>${roll(RESUME, 'Resume', 'download')}</li><li>${roll(LINKEDIN, 'LinkedIn', 'target="_blank" rel="noopener"')}</li></ul>
         <span>Bangalore, India</span>
         <span>&copy; ${new Date().getFullYear()} Mukesh Sankarasetty</span>
         <button class="totop" data-magnetic>Back to top &uarr;</button>
@@ -119,7 +122,7 @@ function pointer() {
   const dot = cur.querySelector('.cursor__dot'), ring = cur.querySelector('.cursor__ring');
   const preview = document.querySelector('.preview');
   const [pTag, pTitle] = [preview.querySelector('span'), preview.querySelector('b')];
-  const pBg = preview.querySelector('.preview__bg');
+  const pBg = preview.querySelector('.preview__bg'), pImg = preview.querySelector('img');
   const r = { ...mouse }, p = { ...mouse };
   gsap.ticker.add(() => {
     r.x = L(r.x, mouse.x, 0.18); r.y = L(r.y, mouse.y, 0.18);
@@ -137,6 +140,8 @@ function pointer() {
     if (row && !row.contains(e.relatedTarget)) {
       const h = +row.dataset.hue, c = t => `hsl(${(t % 1) * 360} 85% 62%)`;
       pBg.style.background = `radial-gradient(circle at 30% 20%, ${c(h + 0.1)}, transparent 60%), linear-gradient(160deg, ${c(h)}, ${c(h + 0.25)})`;
+      preview.classList.toggle('has-img', !!row.dataset.cover);
+      if (row.dataset.cover) pImg.src = row.dataset.cover;
       pTitle.textContent = row.dataset.title; pTag.textContent = row.dataset.client;
       gsap.to(preview, { scale: 1, duration: 0.6, ease: 'expo.out' });
       dispatchEvent(new CustomEvent('project:hover', { detail: h }));
