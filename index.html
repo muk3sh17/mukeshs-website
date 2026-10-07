@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mukesh Sankarasetty — AI Product Manager</title>
-<meta name="description" content="Mukesh Sankarasetty is an AI Product Manager in Bangalore who takes products from day zero to production. 10+ years in software across iOS, product design and product management.">
+<meta name="description" content="I'm Mukesh Sankarasetty, an AI Product Manager in Bangalore. I take products from day zero to production. 10+ years in software across iOS, product design and product management.">
 <meta property="og:title" content="Mukesh Sankarasetty — AI Product Manager">
 <meta property="og:image" content="assets/me/og.jpg">
 <meta property="og:description" content="Case studies in AI-enabled platforms, enterprise SaaS and 0→1 products.">
@@ -18,17 +18,17 @@
   <section class="stage" data-hero-zone aria-label="Introduction">
     <div class="stage__word" aria-hidden="true">PRODUCT</div>
     <canvas id="gl" aria-hidden="true"></canvas>
-    <img class="stage__fallback" src="assets/me/og.jpg" alt="" aria-hidden="true">
+    <img class="stage__fallback" src="assets/me/photo.jpg" alt="" aria-hidden="true">
     <div class="stage__bubble mono" aria-hidden="true"></div>
 
     <div class="stage__copy">
       <p class="pill pill--glass mono"><span class="dot" aria-hidden="true"></span><span data-scramble>AI Product Manager</span></p>
-      <h1 class="stage__title" data-hero aria-label="Mukesh ships AI products.">
-        <span class="line">Mukesh</span>
-        <span class="line">ships</span>
+      <h1 class="stage__title" data-hero aria-label="I'm Mukesh. I ship AI products.">
+        <span class="line">I'm Mukesh.</span>
+        <span class="line">I ship</span>
         <span class="line"><em>AI products.</em></span>
       </h1>
-      <p class="stage__intro" data-split>Mukesh Sankarasetty takes products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
+      <p class="stage__intro" data-split>I take products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
       <div class="stage__cta">
         <a class="pill pill--solid" href="work.html" data-magnetic>See my work <i>&rarr;</i></a>
         <a class="pill pill--ghost" href="assets/Mukesh_Sankarasetty_Resume.pdf" download data-magnetic>Résumé <i>&darr;</i></a>
@@ -36,30 +36,14 @@
     </div>
 
     <aside class="stage__side">
-      <div class="stage__crew">
-        <div class="avatars" id="avatars"></div>
-        <p><b>22 case studies</b><span>From enterprise AI platforms to products I founded.</span></p>
-      </div>
-      <dl class="stage__facts mono">
-        <div><dt>Experience</dt><dd data-scramble>10+ yrs · WNS, Brillio, ZF Wabco, Ameex</dd></div>
-        <div><dt>Based in</dt><dd data-scramble>Bangalore, India</dd></div>
-      </dl>
+      <ul class="stage__stats">
+        <li><b>10+</b><span>Years in software</span></li>
+        <li><b>8+</b><span>0 → 1 products</span></li>
+        <li><b>6</b><span>AI &amp; GenAI products</span></li>
+        <li><b>6+</b><span>Industries</span></li>
+      </ul>
+      <dl class="stage__facts mono"><div><dt>Based in</dt><dd data-scramble>Bangalore, India</dd></div></dl>
     </aside>
-
-    <ul class="stage__stats">
-      <li><b>10+</b><span>Years in software</span></li>
-      <li><b>8+</b><span>0 → 1 products</span></li>
-      <li><b>6</b><span>AI &amp; GenAI products</span></li>
-      <li><b>6+</b><span>Industries</span></li>
-    </ul>
-
-    <div class="stage__cards" id="stageCards"></div>
-
-    <a class="badge" href="#contact" aria-label="Open to AI PM roles — get in touch">
-      <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="bp" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-        <text><textPath href="#bp">OPEN TO AI PM ROLES • BANGALORE • REMOTE • </textPath></text></svg>
-      <i>&#8599;</i>
-    </a>
   </section>
 
   <section>
@@ -108,7 +92,6 @@ import { init, esc } from './assets/site.js';
 import { projects } from './assets/projects.js';
 import './assets/gl.js';
 const featured = projects.filter(p => p.featured);
-const withCover = projects.filter(p => p.cover);
 document.getElementById('featured').innerHTML = featured.map((p, i) => `
   <a class="tilt" href="case.html#${p.slug}" data-tilt data-hue="${p.hue}" data-title="${esc(p.title)}" data-client="${esc(p.client)}">
     <div class="tilt__img" style="--h:${Math.round(p.hue * 360)}">${p.cover ? `<img src="${esc(p.cover)}" alt="" loading="lazy">` : `<b>${esc(p.title)}</b>`}</div>
@@ -116,9 +99,6 @@ document.getElementById('featured').innerHTML = featured.map((p, i) => `
       <span class="tilt__tags mono">${p.tags.slice(0, 3).map(t => `<i>${esc(t)}</i>`).join('')}</span></div>
     <span class="tilt__go" aria-hidden="true">&rarr;</span>
   </a>`).join('');
-document.getElementById('stageCards').innerHTML = withCover.slice(0, 3).map(p => `
-  <a class="mini" href="case.html#${p.slug}"><img src="${esc(p.cover)}" alt="" loading="lazy"><span><b>${esc(p.title)}</b><i class="mono">${esc(p.tags[0])}</i></span><em>Go</em></a>`).join('');
-document.getElementById('avatars').innerHTML = withCover.slice(3, 7).map(p => `<img src="${esc(p.cover)}" alt="">`).join('') + '<span class="mono">+15</span>';
 init();
 // the hero card recedes as you scroll past it
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches)

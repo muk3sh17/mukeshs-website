@@ -1,5 +1,5 @@
 // Shared chrome + motion for every page: nav, contact footer, cursor, smooth scroll,
-// text reveals, project hover preview and page transitions.
+// text reveals and page transitions.
 export const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const touch = matchMedia('(pointer: coarse)').matches;
 
@@ -52,7 +52,6 @@ function chrome() {
     <div class="curtain" aria-hidden="true"><span class="mono">Mukesh Sankarasetty — AI Product Manager</span><div class="curtain__count"></div></div>
     <div class="grain" aria-hidden="true"></div>
     <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>View</span></div></div>
-    <div class="preview" aria-hidden="true"><div class="preview__bg"></div><img alt=""><span class="mono"></span><b></b></div>
     <header class="nav">
       <a href="index.html" class="nav__logo">MS&reg;<small>AI Product Manager</small></a>
       ${page === 'home' ? '' : '<span class="status mono"><i></i>Open to AI PM roles</span>'}
@@ -142,41 +141,20 @@ function pointer() {
   const L = (a, b, t) => a + (b - a) * t;
   const cur = document.querySelector('.cursor');
   const dot = cur.querySelector('.cursor__dot'), ring = cur.querySelector('.cursor__ring');
-  const preview = document.querySelector('.preview');
-  const [pTag, pTitle] = [preview.querySelector('span'), preview.querySelector('b')];
-  const pBg = preview.querySelector('.preview__bg'), pImg = preview.querySelector('img');
-  const r = { ...mouse }, p = { ...mouse };
+  const r = { ...mouse };
   gsap.ticker.add(() => {
     r.x = L(r.x, mouse.x, 0.18); r.y = L(r.y, mouse.y, 0.18);
-    p.x = L(p.x, mouse.x, 0.1); p.y = L(p.y, mouse.y, 0.1);
     dot.style.transform = `translate(${mouse.x}px,${mouse.y}px)`;
     ring.style.transform = `translate(${r.x}px,${r.y}px)`;
-    preview.style.left = p.x + 'px'; preview.style.top = p.y + 'px';
-    preview.style.rotate = (mouse.x - p.x) * 0.06 + 'deg';
   });
   // event delegation: works for content rendered later too
   document.addEventListener('mouseover', e => {
     const el = e.target.closest('a, button');
     if (el && !el.contains(e.relatedTarget)) cur.classList.add(el.hasAttribute('data-hue') ? 'is-view' : 'is-hover');
-    const row = e.target.closest('[data-hue]');
-    if (row && !row.contains(e.relatedTarget)) {
-      const h = +row.dataset.hue, c = t => `hsl(${(t % 1) * 360} 85% 62%)`;
-      pBg.style.background = `radial-gradient(circle at 30% 20%, ${c(h + 0.1)}, transparent 60%), linear-gradient(160deg, ${c(h)}, ${c(h + 0.25)})`;
-      preview.classList.toggle('has-img', !!row.dataset.cover);
-      if (row.dataset.cover) pImg.src = row.dataset.cover;
-      pTitle.textContent = row.dataset.title; pTag.textContent = row.dataset.client;
-      gsap.to(preview, { scale: 1, duration: 0.6, ease: 'expo.out' });
-      dispatchEvent(new CustomEvent('project:hover', { detail: h }));
-    }
   });
   document.addEventListener('mouseout', e => {
     const el = e.target.closest('a, button');
     if (el && !el.contains(e.relatedTarget)) cur.classList.remove('is-view', 'is-hover');
-    const row = e.target.closest('[data-hue]');
-    if (row && !row.contains(e.relatedTarget)) {
-      gsap.to(preview, { scale: 0, duration: 0.5, ease: 'expo.out' });
-      dispatchEvent(new CustomEvent('project:hover', { detail: null }));
-    }
   });
   document.querySelectorAll('[data-magnetic]').forEach(el => {
     el.addEventListener('mousemove', e => {
