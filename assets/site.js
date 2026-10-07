@@ -214,7 +214,8 @@ function enter(heroChars) {
       .from('.nav', { yPercent: -100, opacity: 0, duration: 1, ease: 'expo.out' }, '<');
   }
   document.querySelectorAll('[data-scramble]').forEach((el, i) => gsap.delayedCall(reduce ? 0 : 1.2 + i * 0.12, () => scramble(el)));
-  dispatchEvent(new CustomEvent('page:enter'));
+  // fires as the curtain starts to lift; late listeners check data-entered
+  tl.call(() => { document.documentElement.dataset.entered = 1; dispatchEvent(new CustomEvent('page:enter')); }, null, first && !reduce ? 1.8 : 0);
 }
 function leave(href) {
   const curtain = document.querySelector('.curtain');

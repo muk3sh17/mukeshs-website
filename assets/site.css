@@ -255,7 +255,7 @@ section{position:relative;padding:clamp(96px,14vw,180px) var(--pad)}
 }
 
 /* ================= stage hero (home) ================= */
-.stage{position:relative;margin:10px;border-radius:28px;height:calc(100svh - 20px);min-height:580px;overflow:hidden;isolation:isolate;
+.stage{position:relative;margin:10px;border-radius:28px;touch-action:pan-y;user-select:none;height:calc(100svh - 20px);min-height:580px;overflow:hidden;isolation:isolate;
   background:radial-gradient(110% 85% at 56% 78%,#c04a31 0%,var(--stage) 42%,#6a2014 100%);color:var(--cream);
   display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;
   padding:clamp(96px,12vh,124px) clamp(20px,3vw,44px) clamp(20px,3vw,32px)}
