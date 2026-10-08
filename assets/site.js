@@ -5,6 +5,7 @@ export const touch = matchMedia('(pointer: coarse)').matches;
 
 export const EMAIL = 'sankarasettymukesh@gmail.com';
 export const LINKEDIN = 'https://www.linkedin.com/in/mukesh-sankarasetty/';
+export const GITHUB = 'https://github.com/muk3sh17';
 export const RESUME = 'assets/Mukesh_Sankarasetty_Resume.pdf';
 
 export const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -70,6 +71,7 @@ function chrome() {
         <div class="contact__links">
           <a class="btn" href="mailto:${EMAIL}" data-magnetic>${EMAIL} <i>&rarr;</i></a>
           <a class="btn" href="${LINKEDIN}" target="_blank" rel="noopener" data-magnetic>LinkedIn <i>&rarr;</i></a>
+          <a class="btn" href="${GITHUB}" target="_blank" rel="noopener" data-magnetic>GitHub <i>&rarr;</i></a>
           <a class="btn" href="${RESUME}" target="_blank" rel="noopener" data-magnetic>Résumé (PDF) <i>&darr;</i></a>
         </div>
       </div>
