@@ -30,10 +30,7 @@
         <li>10+ years in software</li>
       </ul>
     </div>
-    <figure class="portrait" data-portrait>
-      <img src="assets/me/portrait.webp" alt="Mukesh Sankarasetty" width="800" height="800">
-      <figcaption class="mono">Mukesh Sankarasetty <span>Bangalore, India</span></figcaption>
-    </figure>
+    <img class="portrait" src="assets/me/photo.webp" alt="Mukesh Sankarasetty" width="800" height="800">
   </section>
 
   <!-- What I do / have done -->
@@ -206,9 +203,6 @@ const reel = document.getElementById('reel');
 if (!reduce && innerWidth > 760) gsap.to(reel, { x: () => -(reel.scrollWidth - innerWidth + 80), ease: 'none',
   scrollTrigger: { trigger: '.gallery-wrap', start: 'top top', end: () => '+=' + reel.scrollWidth, pin: true, scrub: true, invalidateOnRefresh: true } });
 if (!reduce) gsap.fromTo('[data-path]', { '--draw': 0 }, { '--draw': 1, ease: 'none', scrollTrigger: { trigger: '[data-path]', start: 'top 70%', end: 'bottom 60%', scrub: true } });
-// the portrait tilts toward the cursor
-const fig = document.querySelector('[data-portrait]');
-if (!reduce) addEventListener('pointermove', e => gsap.to(fig, { rotateY: (e.clientX / innerWidth - 0.5) * 10, rotateX: -(e.clientY / innerHeight - 0.5) * 8, duration: 1, ease: 'power3.out' }));
 import('./assets/field.js');
 </script>
 </body>

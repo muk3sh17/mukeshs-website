@@ -319,15 +319,8 @@ body.dark{--bg:#140907;--fg:var(--cream);--dim:rgba(251,243,234,.62);--line:rgba
 .ab-lead strong{color:var(--cream);font-weight:700}
 .ab-facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .ab-facts li{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;color:rgba(251,243,234,.85)}
-/* portrait: a tall card, cut-out photo standing in warm light; monochrome, colour on hover; tilts to the cursor */
-.portrait{position:relative;justify-self:center;width:min(480px,100%);aspect-ratio:4/5;border-radius:28px;overflow:hidden;
-  background:radial-gradient(80% 60% at 50% 70%,rgba(255,205,87,.32),transparent 70%),linear-gradient(180deg,#2c130d,#170906);
-  box-shadow:inset 0 0 0 1px rgba(255,205,87,.28),0 40px 90px rgba(0,0,0,.5);transform-style:preserve-3d}
-.portrait img{position:absolute;left:-6%;bottom:0;width:112%;height:auto;filter:grayscale(1) sepia(.45) saturate(1.3) contrast(1.05) brightness(.95);transition:filter .8s var(--ease),scale 1.2s var(--ease)}
-.portrait:hover img{filter:none;scale:1.03}
-.portrait figcaption{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-radius:16px;
-  background:rgba(20,9,7,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,205,87,.25);color:var(--cream)}
-.portrait figcaption span{color:var(--hi)}
+/* portrait: the photo as is, just large */
+.portrait{justify-self:center;width:min(600px,100%);height:auto;border-radius:20px}
 
 /* what I do */
 .does{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(36px,5vw,64px)}
@@ -397,7 +390,7 @@ body.dark{--bg:#140907;--fg:var(--cream);--dim:rgba(251,243,234,.62);--line:rgba
 
 @media (max-width:900px){
   .ab-hero{grid-template-columns:1fr;padding-top:110px}
-  .portrait{width:min(380px,100%);order:-1}
+  .portrait{width:min(420px,100%);order:-1}
   .does,.loves{grid-template-columns:1fr 1fr}
   .wins{grid-template-columns:1fr 1fr}
   .wins li:not(:nth-child(4n+1)){padding-left:0;border-left:0}
