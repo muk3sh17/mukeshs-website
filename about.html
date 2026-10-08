@@ -4,120 +4,206 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Mukesh Sankarasetty, AI Product Manager</title>
-<meta name="description" content="Mukesh Sankarasetty: from iOS developer to product designer to AI Product Manager. Experience, skills, education and certifications.">
+<meta name="description" content="I'm Mukesh Sankarasetty, an AI Product Manager in Bangalore. iOS developer, product designer, then product manager: what I do, achievements, skills, experience, education and what I love outside work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="loading" data-page="about">
+<body class="loading dark" data-page="about">
 <main id="main">
-  <section class="hero" data-hero-zone>
-    <span class="label">About</span>
-    <h1 class="display" data-hero aria-label="From code to product.">
-      <span class="line">From code</span>
-      <span class="line"><em>to product.</em></span>
-    </h1>
-    <div class="hero__meta">
-      <p data-split>10+ years in software as an iOS developer, product designer and now AI Product Manager.</p>
-      <p class="mono dim" data-split>Bangalore, India — English, Hindi, Telugu, Tamil</p>
-      <div class="scroll-cue mono"><i></i>Scroll</div>
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <!-- Who I am -->
+  <section class="ab-hero" data-hero-zone>
+    <div class="ab-hero__copy">
+      <span class="label">Who I am</span>
+      <h1 class="ab-title" data-hero aria-label="I'm Mukesh Sankarasetty.">
+        <span class="line">I'm <em>Mukesh</em></span>
+        <span class="line"><em>Sankarasetty</em>.</span>
+      </h1>
+      <p class="ab-sub" data-split>A product person who turns messy problems into products people rely on.</p>
+      <p class="ab-lead" data-reveal>I'm a <strong>Product Manager</strong> with <strong>3+ years of end-to-end product ownership</strong> and <strong>10+ years in software</strong>. I take products from <strong>day zero to production</strong>: I run discovery workshops with executives, write the PRDs, set the vision and strategy, and ship with cross-functional teams. Years in UX and engineering mean I speak design and tech fluently, so decisions move faster. I'm looking for my next <strong>AI Product Manager</strong> role, in Bangalore or remote.</p>
+      <ul class="ab-facts mono">
+        <li>Bangalore, India</li>
+        <li>10+ years in software</li>
+      </ul>
     </div>
+    <img class="portrait" src="assets/me/photo.webp" alt="Mukesh Sankarasetty" width="800" height="800">
   </section>
 
+  <!-- What I do / have done -->
   <section>
-    <span class="label">Story</span>
-    <p class="lead" data-scrub>I started in 2016 writing Swift as an iOS developer. Building apps taught me <em>how</em> products are made. Watching people use them taught me <em>why</em> some succeed.</p>
-    <div class="cols" style="margin-top:clamp(56px,8vw,112px)">
-      <p class="body" data-reveal>At Ameex Technologies I moved from code into product and UX. I set up the company's first in-house product practice and delivered enterprise healthcare products under HIPAA and WCAG requirements.</p>
-      <p class="body" data-reveal>As a senior designer at ZF Wabco and Brillio, I worked with global product owners on fleet management and on products for Verizon and Terminix. At WNS I led Optima AI as Product Manager, from day zero to production.</p>
-      <p class="body" data-reveal>Today I'm looking for <strong>Product Manager and AI Product Manager roles</strong> where data and AI change how people work. I also build with AI every day, using Claude Code, Codex and Lovable to prototype and ship faster.</p>
+    <span class="label">What I do</span>
+    <h2 class="h2" data-split>Four things I do <em>well.</em></h2>
+    <div class="does">
+      <article class="do" data-reveal>
+        <span class="mono">Discover</span>
+        <h3>Find the real problem</h3>
+        <p>Onsite discovery, executive workshops and journey mapping — until the people doing the work agree on what is broken.</p>
+        <p class="do__done mono">Done: <a href="case.html#optima-ai">3 weeks onsite for Optima AI</a></p>
+      </article>
+      <article class="do" data-reveal>
+        <span class="mono">Define</span>
+        <h3>Turn noise into a plan</h3>
+        <p>North-star metrics, PRDs and user stories, and roadmaps prioritised with RICE and Kano.</p>
+        <p class="do__done mono">Done: <a href="case.html#northern-neck-insurance">450+ reports → 60 dashboards</a></p>
+      </article>
+      <article class="do" data-reveal>
+        <span class="mono">Deliver</span>
+        <h3>Ship 0 → 1 with the team</h3>
+        <p>Agile delivery with cross-functional teams of 25+. When timelines tighten, I re-scope the MVP — not the outcome.</p>
+        <p class="do__done mono">Done: <a href="case.html#cargo-intake-calculator">Cargill cargo intake, live</a></p>
+      </article>
+      <article class="do" data-reveal>
+        <span class="mono">Bring AI in</span>
+        <h3>Rules first, then AI</h3>
+        <p>Automate what rules can handle, then put AI where it can replace a manual decision — and measure it.</p>
+        <p class="do__done mono">Done: <a href="case.html#media-intelligence">GenAI media intelligence</a></p>
+      </article>
     </div>
   </section>
 
+  <!-- Achievements -->
+  <section>
+    <span class="label">Achievements</span>
+    <h2 class="h2" data-split>Numbers I'm <em>proud of.</em></h2>
+    <ul class="wins">
+      <li data-reveal><b><span data-count="60">60</span>%</b><span>Less process time per team on Optima AI, after replacing 10+ tools with one platform</span></li>
+      <li data-reveal><b><span data-count="90">90</span>%</b><span>Less manual reporting, with live north-star dashboards for leadership</span></li>
+      <li data-reveal><b><span data-count="120">120</span>+ hrs</b><span>Analyst time saved every month for Northern Neck Insurance</span></li>
+      <li data-reveal><b><span data-count="35">35</span>%</b><span>Higher user satisfaction after redesigning Terminix onboarding</span></li>
+      <li data-reveal><b><span data-count="40">40</span>%</b><span>Fewer drop-offs in Identifor's gamified assessment funnel</span></li>
+      <li data-reveal><b>&lt;1 min</b><span>Lead response at Belvère Designs with AI chat agents, down from 10 minutes</span></li>
+      <li data-reveal><b><span data-count="25">25</span>+</b><span>People led across engineering, QA, data and design</span></li>
+      <li data-reveal><b><span data-count="18">18</span>+</b><span>AI use cases mapped into Optima AI's roadmap</span></li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <span class="label">Skills</span>
+    <h2 class="h2" data-split>What I <em>bring.</em></h2>
+    <div class="skillset">
+      <div data-reveal><h3>Product</h3><p class="chips"><i>Strategy</i><i>Vision &amp; roadmap</i><i>Discovery</i><i>PRDs &amp; user stories</i><i>RICE · Kano</i><i>MVP definition</i><i>GTM</i><i>OKRs &amp; KPIs</i></p></div>
+      <div data-reveal><h3>AI</h3><p class="chips"><i>Generative AI</i><i>LLM fundamentals</i><i>AI agents</i><i>Workflow automation</i><i>Prompt engineering</i></p></div>
+      <div data-reveal><h3>Delivery</h3><p class="chips"><i>Agile / Scrum</i><i>Sprint planning</i><i>Release management</i><i>UAT</i><i>Risk management</i><i>A/B testing</i></p></div>
+      <div data-reveal><h3>Data &amp; tech</h3><p class="chips"><i>SQL</i><i>Power BI</i><i>Firebase &amp; GA</i><i>Funnel analysis</i><i>APIs</i><i>iOS / Swift</i></p></div>
+      <div data-reveal><h3>UX &amp; research</h3><p class="chips"><i>User research</i><i>Usability testing</i><i>Prototyping</i><i>Design systems</i><i>WCAG</i><i>Journey mapping</i><i>UX audits</i></p></div>
+      <div data-reveal><h3>Leadership</h3><p class="chips"><i>Stakeholder management</i><i>Executive communication</i><i>Client workshops</i><i>Onshore-offshore teams</i><i>Mentoring</i></p></div>
+      <div data-reveal><h3>Domains</h3><p class="chips"><i>Insurance &amp; BFSI</i><i>Healthcare (HIPAA)</i><i>Logistics &amp; fleet</i><i>Telecom</i><i>Enterprise SaaS</i></p></div>
+      <div data-reveal><h3>Tools</h3><p class="chips"><i>JIRA</i><i>Confluence</i><i>Miro</i><i>Figma</i><i>Notion</i><i>Claude Code</i><i>Codex</i><i>Lovable</i></p></div>
+    </div>
+  </section>
+
+  <!-- Experience -->
   <section>
     <span class="label">Experience</span>
-    <ol class="timeline">
+    <h2 class="h2" data-split>From code to <em>product.</em></h2>
+    <ol class="path" data-path>
       <li data-reveal>
-        <span class="mono dim">Jun 2023 — Aug 2026</span>
-        <h3>Product Manager<em>WNS Global Services</em></h3>
-        <ul>
-          <li>Led Optima AI from day zero to production for UK client Bamboo Connect, owning vision, roadmap and backlog for the QC and claims modules (~75% of product scope).</li>
-          <li>Ran a 3-week onsite discovery in the UK with 20+ executives and 8+ operations teams, producing a target-state process, 150+ user stories and a phased release plan.</li>
-          <li>Reinvented the device quality-check flow and shipped it to production, cutting QC time by 60%; replaced 10+ disconnected tools with one platform.</li>
-          <li>Designed rule-based automation flows and documented 18+ AI use cases for the product's AI roadmap.</li>
-          <li>Defined Claim TAT as the north-star metric and built leadership dashboards, cutting manual reporting effort by 90%.</li>
-          <li>Led a 25+ member team across engineering, QA, data and design; mentored 8+ product and design team members.</li>
-          <li>Consolidated 450+ legacy reports from six platforms into 60 self-serve Power BI dashboards for Northern Neck Insurance, saving 120+ analyst hours a month.</li>
-          <li>Led the redesign of Cargill's maritime cargo-intake tool into a guided, real-time workflow, cutting processing time by 60%.</li>
-          <li>Led client delivery on a GenAI media-intelligence platform for Mediaplus (House of Communication), including a pitch prototype built over one weekend.</li>
-        </ul>
+        <span class="mono">Jun 2023 — Aug 2026 · Bangalore</span>
+        <h3>Product Manager <small>WNS Global Services</small></h3>
+        <p>Took Optima AI from day zero to production for Bamboo Connect, owning vision, roadmap and backlog for claims and QA. Led Northern Neck Insurance's move from 450+ legacy reports to 60 self-serve dashboards, Cargill's cargo-intake redesign and delivery on a GenAI media-intelligence platform for Mediaplus.</p>
       </li>
       <li data-reveal>
-        <span class="mono dim">May 2022 — Jun 2023</span>
-        <h3>Senior Product Designer<em>Brillio Technologies</em></h3>
-        <ul>
-          <li>Modernised legacy B2B tools for Verizon, shipping 100+ screen prototypes across Agile sprints to validate flows before build.</li>
-          <li>Redesigned onboarding for Terminix (USA) using user research and product telemetry, lifting user satisfaction scores by 35%.</li>
-          <li>Cut design-to-dev handoff errors by 20% with functional specifications and a reusable component library.</li>
-        </ul>
+        <span class="mono">May 2022 — Jun 2023 · Bangalore</span>
+        <h3>Senior Product Designer <small>Brillio Technologies</small></h3>
+        <p>Modernised legacy B2B tools for Verizon with 100+ screen prototypes, redesigned Terminix onboarding (+35% satisfaction) and cut handoff errors by 20% with specs and a component library.</p>
       </li>
       <li data-reveal>
-        <span class="mono dim">Aug 2021 — May 2022</span>
-        <h3>Senior UI/UX Designer<em>ZF Wabco</em></h3>
-        <ul>
-          <li>Worked with global Product Owners on a multi-module fleet management platform, turning research into production-ready workflows.</li>
-          <li>Reworked dense data tables into mobile-friendly analytics views, improving real-time tracking efficiency for fleet operators by 22%.</li>
-        </ul>
+        <span class="mono">Aug 2021 — May 2022 · Bangalore</span>
+        <h3>Senior UI/UX Designer <small>ZF Wabco</small></h3>
+        <p>Worked with global product owners on a multi-module fleet management platform, turning dense data tables into mobile-friendly analytics views.</p>
       </li>
       <li data-reveal>
-        <span class="mono dim">May 2016 — Aug 2021</span>
-        <h3>Product Engineer &amp; UX Designer<em>Ameex Technologies</em></h3>
-        <ul>
-          <li>Started as an iOS Developer in Swift, then moved into product and UX; set up the company's first in-house product practice.</li>
-          <li>Owned end-to-end delivery of two enterprise healthcare products, Identifor and CareVisor, meeting HIPAA and WCAG requirements.</li>
-          <li>Rebuilt Identifor's assessment funnel into a gamified onboarding journey, cutting drop-offs and bounce rate by 40%.</li>
-          <li>Delivered consumer and enterprise products for clients including Samsung, Chrysalis and ROH.</li>
-        </ul>
+        <span class="mono">May 2016 — Aug 2021 · Chennai</span>
+        <h3>Product Engineer &amp; UX Designer <small>Ameex Technologies</small></h3>
+        <p>Started as an iOS developer in Swift, moved into product and UX, and set up the company's first in-house product practice. Delivered Identifor and CareVisor under HIPAA and WCAG, and products for Samsung, Chrysalis and ROH.</p>
       </li>
     </ol>
   </section>
 
-  <section>
-    <span class="label">Skills</span>
-    <div class="skills">
-      <div data-reveal><h3>Product</h3><p>Strategy, vision &amp; roadmap, end-to-end lifecycle, discovery, PRDs &amp; user stories, prioritisation (RICE, Kano), MVP definition, GTM, success metrics, OKRs &amp; KPIs</p></div>
-      <div data-reveal><h3>AI</h3><p>Generative AI, LLM fundamentals, AI agents, workflow automation, prompt engineering</p></div>
-      <div data-reveal><h3>Delivery</h3><p>Agile / Scrum, sprint planning, backlog grooming, release management, UAT, dependency &amp; risk management, SDLC, A/B testing</p></div>
-      <div data-reveal><h3>Data &amp; technical</h3><p>Data-driven decisions, SQL, Power BI, Firebase &amp; Google Analytics, funnel analysis, architecture &amp; APIs (working knowledge), iOS / Swift</p></div>
-      <div data-reveal><h3>UX &amp; research</h3><p>User research, usability testing, design thinking, prototyping, design systems, WCAG accessibility, competitive analysis, journey mapping, product &amp; UX audits</p></div>
-      <div data-reveal><h3>Leadership</h3><p>Cross-functional leadership, stakeholder management, executive communication, client discovery workshops, onshore-offshore collaboration, mentoring</p></div>
-      <div data-reveal><h3>Domains</h3><p>Insurance &amp; BFSI, healthcare (HIPAA), logistics &amp; fleet, telecom, enterprise SaaS, B2B &amp; B2C</p></div>
-      <div data-reveal><h3>Tools</h3><p>JIRA, Confluence, Miro, Figma, Figma Make, Notion, VS Code, Claude Code, Codex, Lovable</p></div>
+  <!-- Education · Certifications · Languages -->
+  <section class="creds">
+    <div data-reveal>
+      <span class="label">Education</span>
+      <h3>Master of Computer Applications</h3>
+      <p>Andhra Loyola College, Vijayawada</p>
+      <p class="mono dim">2015 · CGPA 8.2</p>
+    </div>
+    <div data-reveal>
+      <span class="label">Certifications</span>
+      <ul>
+        <li><h3>Generative AI Mastermind</h3><p class="mono dim">Outskill</p></li>
+        <li><h3>AI for Designers</h3><p class="mono dim">Interaction Design Foundation</p></li>
+        <li><h3>User Research Methods</h3><p class="mono dim">Interaction Design Foundation</p></li>
+      </ul>
+    </div>
+    <div data-reveal>
+      <span class="label">Languages I speak</span>
+      <ul class="langs">
+        <li><b>English</b><span>English</span></li>
+        <li><b lang="hi">हिन्दी</b><span>Hindi</span></li>
+        <li><b lang="te">తెలుగు</b><span>Telugu</span></li>
+        <li><b lang="ta">தமிழ்</b><span>Tamil</span></li>
+      </ul>
     </div>
   </section>
 
+  <!-- I love to -->
   <section>
-    <span class="label">Credentials</span>
-    <div class="cols">
-      <div data-reveal><h3>Education</h3><ul><li><b>Master of Computer Applications (MCA)</b>Andhra Loyola College, Vijayawada — CGPA 8.2, 2015</li></ul></div>
-      <div data-reveal><h3>Certifications</h3><ul>
-        <li><b>Generative AI Mastermind</b>Outskill</li>
-        <li><b>AI for Designers</b>Interaction Design Foundation</li>
-        <li><b>User Research Methods</b>Interaction Design Foundation</li></ul></div>
-      <div data-reveal><h3>Languages</h3><ul><li><b>English</b></li><li><b>Hindi</b></li><li><b>Telugu</b></li><li><b>Tamil</b></li></ul></div>
-    </div>
-    <p style="margin-top:clamp(48px,6vw,80px)"><a class="btn" href="assets/Mukesh_Sankarasetty_Resume.pdf" target="_blank" rel="noopener" data-magnetic>Download résumé (PDF) <i>&darr;</i></a></p>
+    <span class="label">Off the clock</span>
+    <h2 class="h2" data-split>I love <em>to.</em></h2>
+    <ul class="loves">
+      <li data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M8 24c8-2 24-2 32 0M24 8c-4 8-4 24 0 32"/></svg><b>Play sports</b><span>The fastest way I know to reset a busy week.</span></li>
+      <li data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="17" y="6" width="14" height="22" rx="7"/><path d="M11 22a13 13 0 0 0 26 0M24 35v7M17 42h14"/></svg><b>Sing</b><span>Melody over metrics, at least for an evening.</span></li>
+      <li data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 24h32a16 16 0 0 1-32 0zM14 16c0-4 4-4 4-8M24 16c0-4 4-4 4-8M34 16c0-4 4-4 4-8"/></svg><b>Cook</b><span>Recipes are just specs you can taste.</span></li>
+      <li data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30l36-14-10 26-6-10-10-2z"/><path d="M26 32l16-16"/></svg><b>Travel</b><span>New places, new problems, new ways of seeing them.</span></li>
+    </ul>
+  </section>
+
+  <!-- Gallery: photos from workshops and teams (placeholders until the real photos arrive) -->
+  <section class="gallery-wrap">
+    <span class="label">Moments</span>
+    <h2 class="h2" data-split>Workshops, teams &amp; <em>travel.</em></h2>
+    <div class="reel" id="reel"></div>
   </section>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}</script>
 <script type="module">
-import { init } from './assets/site.js';
+import { init, esc, reduce } from './assets/site.js';
+
+// Gallery: add a photo by setting `src` (e.g. 'assets/gallery/discovery-uk.jpg'); empty ones show a placeholder.
+const photos = [
+  { src: '', caption: 'Discovery workshop · Optima AI, UK' },
+  { src: '', caption: 'Team · WNS' },
+  { src: '', caption: 'Design sprint · Brillio' },
+  { src: '', caption: 'Fleet research · ZF Wabco' },
+  { src: '', caption: 'Product team · Ameex' },
+  { src: '', caption: 'Talk or workshop' },
+  { src: '', caption: 'Travel' }
+];
+document.getElementById('reel').innerHTML = photos.map((p, i) => `
+  <figure class="shot" style="--r:${[-3, 2, -1.5, 3, -2.5, 1.5, -2][i % 7]}deg">
+    ${p.src ? `<img src="${esc(p.src)}" alt="${esc(p.caption)}" loading="lazy">`
+            : `<div class="shot__ph"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="26" rx="4"/><circle cx="24" cy="25" r="7"/><path d="M17 12l3-5h8l3 5"/></svg><span class="mono">Photo coming soon</span></div>`}
+    <figcaption class="mono">${esc(p.caption)}</figcaption>
+  </figure>`).join('');
+
 init();
+
+// the reel pins and scrolls sideways; the experience path draws as you scroll
+const reel = document.getElementById('reel');
+if (!reduce && innerWidth > 760) gsap.to(reel, { x: () => -(reel.scrollWidth - innerWidth + 80), ease: 'none',
+  scrollTrigger: { trigger: '.gallery-wrap', start: 'top top', end: () => '+=' + reel.scrollWidth, pin: true, scrub: true, invalidateOnRefresh: true } });
+if (!reduce) gsap.fromTo('[data-path]', { '--draw': 0 }, { '--draw': 1, ease: 'none', scrollTrigger: { trigger: '[data-path]', start: 'top 70%', end: 'bottom 60%', scrub: true } });
+import('./assets/field.js');
 </script>
 </body>
 </html>

@@ -5,6 +5,7 @@ export const touch = matchMedia('(pointer: coarse)').matches;
 
 export const EMAIL = 'sankarasettymukesh@gmail.com';
 export const LINKEDIN = 'https://www.linkedin.com/in/mukesh-sankarasetty/';
+export const GITHUB = 'https://github.com/muk3sh17';
 export const RESUME = 'assets/Mukesh_Sankarasetty_Resume.pdf';
 
 export const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -53,9 +54,9 @@ function chrome() {
     <div class="grain" aria-hidden="true"></div>
     <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>View</span></div></div>
     <header class="nav">
-      ${page === 'home' ? '' : '<span class="status mono"><i></i>Open to AI PM roles</span>'}
       <ul class="nav__links mono">
-        <li>${roll('about.html', 'About', cur('about'))}</li>
+        <li>${roll('index.html', 'Home', cur('home'))}</li>
+        <li>${roll('about.html', 'About me', cur('about'))}</li>
         <li>${roll('work.html', 'Work', cur('work'))}</li>
         <li>${roll('#contact', 'Contact')}</li>
         <li><a class="nav__cta" href="${RESUME}" download>Resume <span aria-hidden="true">&darr;</span></a></li>
@@ -70,11 +71,12 @@ function chrome() {
         <div class="contact__links">
           <a class="btn" href="mailto:${EMAIL}" data-magnetic>${EMAIL} <i>&rarr;</i></a>
           <a class="btn" href="${LINKEDIN}" target="_blank" rel="noopener" data-magnetic>LinkedIn <i>&rarr;</i></a>
+          <a class="btn" href="${GITHUB}" target="_blank" rel="noopener" data-magnetic>GitHub <i>&rarr;</i></a>
           <a class="btn" href="${RESUME}" target="_blank" rel="noopener" data-magnetic>Résumé (PDF) <i>&darr;</i></a>
         </div>
       </div>
       <footer class="footer mono">
-        <ul><li>${roll('about.html', 'About')}</li><li>${roll('work.html', 'Work')}</li><li>${roll(RESUME, 'Resume', 'download')}</li><li>${roll(LINKEDIN, 'LinkedIn', 'target="_blank" rel="noopener"')}</li></ul>
+        <ul><li>${roll('about.html', 'About me')}</li><li>${roll('work.html', 'Work')}</li><li>${roll(RESUME, 'Resume', 'download')}</li><li>${roll(LINKEDIN, 'LinkedIn', 'target="_blank" rel="noopener"')}</li></ul>
         <span>Bangalore, India</span>
         <span>&copy; ${new Date().getFullYear()} Mukesh Sankarasetty</span>
         <button class="totop" data-magnetic>Back to top &uarr;</button>
