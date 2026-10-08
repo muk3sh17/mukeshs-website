@@ -49,8 +49,9 @@ em{font-style:normal;color:var(--accent)}
 .nav__links{align-items:center}
 .nav__cta{display:inline-flex;gap:6px;border-radius:99px;padding:8px 16px;background:#2a140d;color:#fbf3ea;transition:background .3s}
 .nav__cta:hover{background:var(--accent)}
-.nav__logo{font-weight:600;letter-spacing:-.03em;font-size:18px;white-space:nowrap}
-.nav__logo small{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.08em;margin-left:10px;text-transform:uppercase}
+.nav__logo{padding:3px 20px}
+.nav__logo img{height:42px;width:auto;animation:sign 1.6s .9s var(--ease) both}
+@keyframes sign{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 .nav__links{display:flex;gap:clamp(16px,3vw,40px);list-style:none}
 .roll{position:relative;display:inline-block;overflow:hidden;vertical-align:top}
 .roll span{display:block;transition:transform .5s cubic-bezier(.7,0,.2,1)}
@@ -60,7 +61,7 @@ em{font-style:normal;color:var(--accent)}
 .status{display:inline-flex;align-items:center;gap:8px}
 .status i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(179,64,31,.55);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(179,64,31,0)}100%{box-shadow:0 0 0 0 rgba(179,64,31,0)}}
-@media (max-width:760px){.nav__logo small,.nav .status{display:none}}
+@media (max-width:760px){.nav .status{display:none}}
 
 main{position:relative;z-index:1}
 section{position:relative;padding:clamp(96px,14vw,180px) var(--pad)}
@@ -261,17 +262,17 @@ body[data-page=home]{background:#140907}
 .chap__copy{align-self:center;max-width:min(1100px,100%)}
 .chap__title{font-family:var(--display);font-weight:600;font-size:clamp(46px,min(8.2vw,13vh),150px);line-height:.95;letter-spacing:-.035em;margin:clamp(16px,2.6vh,26px) 0 clamp(14px,2.4vh,24px)}
 .chap__title .line{display:block;overflow:hidden;padding:0 .08em .12em 0;margin-bottom:-.12em}
-.chap__title em{color:var(--hi);font-weight:500}
-.chap__intro{font-size:clamp(17px,1.4vw,21px);line-height:1.5;max-width:46ch;color:rgba(251,243,234,.8)}
+.chap__title em{color:var(--hi)}
+.chap__intro{font-size:clamp(17px,1.4vw,21px);line-height:1.5;max-width:46ch;color:var(--cream)}
 .chap__metrics b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(34px,3.6vw,56px);letter-spacing:-.02em;line-height:1;color:var(--hi)}
 /* status strip: the numbers and where I am, read like an instrument panel */
 .hud{display:grid;grid-template-columns:repeat(4,1fr) 1.3fr;border-top:1px solid var(--line);padding-top:clamp(14px,2.2vh,22px)}
 .hud > div{padding-right:clamp(12px,2vw,28px)}
 .hud > div + div{padding-left:clamp(12px,2vw,28px);border-left:1px solid var(--line)}
-.hud dt{color:var(--dim);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.hud dt{color:rgba(251,243,234,.78);display:flex;align-items:center;gap:8px;margin-bottom:10px}
 .hud dd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .hud b{font-family:var(--display);font-weight:500;font-size:clamp(28px,2.6vw,44px);line-height:1;letter-spacing:-.02em;color:var(--hi)}
-.hud span{font-size:13px;color:rgba(251,243,234,.72)}
+.hud span{font-size:14px;color:var(--cream)}
 .hud__loc b{color:var(--cream)}
 .hud__loc time{font-family:var(--mono);color:var(--hi)}
 /* the closing chapter doubles as the footer */
@@ -321,7 +322,8 @@ body[data-page=home]{background:#140907}
 .cursor.is-view .cursor__ring span{color:#2a140d}
 @media (max-width:480px){
   .nav{padding:14px 12px;gap:8px}
-  .nav__logo{padding:10px 14px}
+  .nav__logo{padding:5px 12px}
+  .nav__logo img{height:30px}
   .nav__links{gap:12px;padding:4px 4px 4px 14px;font-size:10px;letter-spacing:.04em}
   .nav__cta{padding:7px 11px}
 }

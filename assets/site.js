@@ -53,7 +53,7 @@ function chrome() {
     <div class="grain" aria-hidden="true"></div>
     <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>View</span></div></div>
     <header class="nav">
-      <a href="index.html" class="nav__logo">MS&reg;<small>AI Product Manager</small></a>
+      <a href="index.html" class="nav__logo" aria-label="Mukesh Sankarasetty, home"><img src="assets/sign.svg" alt="Mukesh" width="96" height="45"></a>
       ${page === 'home' ? '' : '<span class="status mono"><i></i>Open to AI PM roles</span>'}
       <ul class="nav__links mono">
         <li>${roll('about.html', 'About', cur('about'))}</li>
@@ -100,11 +100,21 @@ function splitWords(el) {
   return el.querySelectorAll('.wi');
 }
 function splitChars(line) {
-  const host = line.firstElementChild || line;
-  // chars grouped per word so lines only wrap between words
-  host.innerHTML = host.textContent.trim().split(/\s+/)
-    .map(w => `<span class="wd">${[...w].map(c => `<span class="ch">${esc(c)}</span>`).join('')}</span>`).join(' ');
-  return [...host.querySelectorAll('.ch')];
+  // chars grouped per word so lines only wrap between words; highlighted words (<em>) keep their element
+  const walk = n => [...n.childNodes].forEach(c => {
+    if (c.nodeType !== 3) return walk(c);
+    const f = document.createDocumentFragment();
+    c.textContent.split(/(\s+)/).forEach(w => {
+      if (!w) return;
+      if (/^\s+$/.test(w)) return f.append(' ');
+      const wd = document.createElement('span');
+      wd.className = 'wd'; wd.innerHTML = [...w].map(ch => `<span class="ch">${esc(ch)}</span>`).join('');
+      f.append(wd);
+    });
+    c.replaceWith(f);
+  });
+  walk(line);
+  return [...line.querySelectorAll('.ch')];
 }
 
 const heroTweens = [];
