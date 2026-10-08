@@ -53,7 +53,6 @@ function chrome() {
     <div class="grain" aria-hidden="true"></div>
     <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>View</span></div></div>
     <header class="nav">
-      <a href="index.html" class="nav__logo" aria-label="Mukesh Sankarasetty, home"><img src="assets/sign.svg" alt="Mukesh" width="96" height="45"></a>
       ${page === 'home' ? '' : '<span class="status mono"><i></i>Open to AI PM roles</span>'}
       <ul class="nav__links mono">
         <li>${roll('about.html', 'About', cur('about'))}</li>
