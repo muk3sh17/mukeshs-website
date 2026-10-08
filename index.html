@@ -15,43 +15,75 @@
 </head>
 <body class="loading" data-page="home">
 <main id="main">
-  <section class="stage" data-hero-zone aria-label="Introduction">
-    <div class="stage__word" aria-hidden="true">PRODUCT</div>
-    <canvas id="gl" aria-hidden="true"></canvas>
-    <img class="stage__fallback" src="assets/me/og.jpg" alt="" aria-hidden="true">
-    <div class="stage__bubble mono" aria-hidden="true"></div>
+  <canvas id="world" aria-hidden="true"></canvas>
+  <div class="world-tip" aria-hidden="true"></div>
 
-    <div class="stage__copy">
-      <p class="pill pill--glass mono"><span class="dot" aria-hidden="true"></span><span data-scramble>AI Product Manager</span></p>
-      <h1 class="stage__title" data-hero aria-label="I'm Mukesh. I ship AI products.">
-        <span class="line">I'm Mukesh.</span>
-        <span class="line">I ship</span>
-        <span class="line"><em>AI products.</em></span>
-      </h1>
-      <p class="stage__intro" data-split>I take products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
-      <div class="stage__cta">
-        <a class="pill pill--solid" href="work.html" data-magnetic>See my work <i>&rarr;</i></a>
-        <a class="pill pill--ghost" href="assets/Mukesh_Sankarasetty_Resume.pdf" download data-magnetic>Résumé <i>&darr;</i></a>
+  <div class="story" id="story">
+    <section class="chap chap--hero" data-hero-zone aria-label="Introduction">
+      <div class="chap__copy">
+        <p class="pill pill--glass mono"><span class="dot" aria-hidden="true"></span><span data-scramble>AI Product Manager</span></p>
+        <h1 class="chap__title" data-hero aria-label="I'm Mukesh. I turn noise into AI products.">
+          <span class="line">I'm Mukesh.</span>
+          <span class="line">I turn noise</span>
+          <span class="line"><em>into AI products.</em></span>
+        </h1>
+        <p class="chap__intro" data-split>I take products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
+        <div class="chap__cta">
+          <a class="pill pill--solid" href="#work" data-magnetic>See my work <i>&rarr;</i></a>
+          <a class="pill pill--ghost" href="assets/Mukesh_Sankarasetty_Resume.pdf" download data-magnetic>Résumé <i>&darr;</i></a>
+        </div>
       </div>
-    </div>
+      <aside class="chap__side">
+        <ul class="chap__stats">
+          <li><b>10+</b><span>Years in software</span></li>
+          <li><b>8+</b><span>0 → 1 products</span></li>
+          <li><b>6</b><span>AI &amp; GenAI products</span></li>
+          <li><b>6+</b><span>Industries</span></li>
+        </ul>
+        <dl class="chap__facts mono"><div><dt>Based in</dt><dd data-scramble>Bangalore, India</dd></div></dl>
+      </aside>
+      <p class="chap__cue mono" aria-hidden="true"><span></span>Scroll to see how I work</p>
+    </section>
 
-    <aside class="stage__side">
-      <ul class="stage__stats">
-        <li><b>10+</b><span>Years in software</span></li>
-        <li><b>8+</b><span>0 → 1 products</span></li>
-        <li><b>6</b><span>AI &amp; GenAI products</span></li>
-        <li><b>6+</b><span>Industries</span></li>
+    <section class="chap">
+      <span class="label">Listen</span>
+      <h2 class="h2" data-split>Every product starts as <em>noise.</em></h2>
+      <p class="chap__body" data-reveal>Siloed teams, manual workarounds, 450+ reports nobody fully trusts. Before I write a single story I go where the work happens — on Optima AI that meant three weeks onsite with 20+ executives and 8+ operations teams.</p>
+    </section>
+
+    <section class="chap chap--right">
+      <span class="label">Shape</span>
+      <h2 class="h2" data-split>I find the <em>shape</em> in it.</h2>
+      <p class="chap__body" data-reveal>One north-star metric, clear KPIs and a prioritised roadmap. Discovery becomes 150+ user stories and a phased release plan — rules first, then AI wherever it can replace a manual decision.</p>
+    </section>
+
+    <section class="chap chap--low">
+      <span class="label">Ship</span>
+      <h2 class="h2" data-split>Then I <em>ship</em> it.</h2>
+      <p class="chap__body" data-reveal>Day zero to production across insurance, logistics, healthcare and media. Fly through the work — <span class="hide-touch">click</span><span class="show-touch">tap</span> any screen to open its case study.</p>
+    </section>
+
+    <section class="chap">
+      <span class="label">Measure</span>
+      <h2 class="h2" data-split>And measure what <em>changed.</em></h2>
+      <ul class="chap__metrics">
+        <li data-reveal><b>450+ → 60</b><span>Legacy reports became self-serve dashboards</span></li>
+        <li data-reveal><b>18+</b><span>AI use cases mapped for Optima AI</span></li>
+        <li data-reveal><b>8+</b><span>Siloed teams moved onto one platform</span></li>
+        <li data-reveal><b>6</b><span>AI &amp; GenAI products shipped</span></li>
       </ul>
-      <dl class="stage__facts mono"><div><dt>Based in</dt><dd data-scramble>Bangalore, India</dd></div><div><dt>Try it</dt><dd>Drag me — I spin 360°</dd></div></dl>
-    </aside>
-  </section>
+    </section>
 
-  <section>
-    <span class="label">In short</span>
-    <p class="lead" data-scrub>I've built products from three sides — as an iOS developer, a product designer and a product manager. At WNS I took <em>Optima&nbsp;AI</em> from day zero to production, moving 8+ siloed teams onto one platform and designing its AI roadmap.</p>
-  </section>
+    <section class="chap chap--end">
+      <p class="chap__body" data-reveal>Open to AI Product Manager roles — Bangalore or remote.</p>
+      <div class="chap__cta" data-reveal>
+        <a class="pill pill--solid" href="#contact" data-magnetic>Get in touch <i>&rarr;</i></a>
+        <a class="pill pill--ghost" href="#work" data-magnetic>Selected work <i>&darr;</i></a>
+      </div>
+    </section>
+  </div>
 
-  <section>
+  <section class="after" id="work">
     <span class="label">Selected case studies</span>
     <h2 class="h2" data-split>Selected <em>work</em></h2>
     <p class="body" style="margin:24px 0 clamp(32px,5vw,64px)" data-reveal>Each case study walks through the context, my role, the process, key decisions, outcomes and what I learned.</p>
@@ -59,20 +91,7 @@
     <p style="margin-top:48px"><a class="btn" href="work.html" data-magnetic>All case studies <i>&rarr;</i></a></p>
   </section>
 
-  <section>
-    <span class="label">How I work</span>
-    <h2 class="h2" data-split style="margin-bottom:clamp(40px,6vw,80px)">From discovery to <em>outcomes</em></h2>
-    <div class="steps">
-      <div class="step" data-reveal><span class="mono">01</span><h3>Discover</h3><p>Go where the work happens. On Optima AI that meant three weeks onsite with 20+ executives and 8+ operations teams before writing a single story.</p></div>
-      <div class="step" data-reveal><span class="mono">02</span><h3>Define</h3><p>One north-star metric, clear KPIs and a prioritised backlog (RICE, Kano). Discovery became 150+ user stories and a phased release plan.</p></div>
-      <div class="step" data-reveal><span class="mono">03</span><h3>Deliver</h3><p>Agile delivery with cross-functional teams of 25+. When timelines tighten, I re-scope the MVP — not the outcome.</p></div>
-      <div class="step" data-reveal><span class="mono">04</span><h3>Measure</h3><p>Live dashboards over manual reports. 450+ legacy reports became 60 self-serve Power BI dashboards.</p></div>
-      <div class="step" data-reveal><span class="mono">05</span><h3>Learn</h3><p>Stop on evidence, not hope. I paused PetalPost after testing exposed friction in its core loop.</p></div>
-    </div>
-    <p class="lead" style="margin-top:clamp(64px,8vw,120px)" data-scrub>Where AI fits: <em>rule-based automation first</em>, then AI where it can replace manual decisions — like the 18+ AI use cases I mapped for Optima AI.</p>
-  </section>
-
-  <section>
+  <section class="after">
     <span class="label">Companies &amp; clients</span>
     <div class="marquee" aria-label="Companies and clients: WNS, Bamboo Connect, Northern Neck Insurance, Mediaplus, Cargill, Verizon, Samsung, Terminix, ZF Wabco, Brillio, Identifor, Chrysalis">
       <div class="marquee__track" aria-hidden="true">
@@ -90,7 +109,6 @@
 <script type="module">
 import { init, esc } from './assets/site.js';
 import { projects } from './assets/projects.js';
-import './assets/gl.js';
 const featured = projects.filter(p => p.featured);
 document.getElementById('featured').innerHTML = featured.map((p, i) => `
   <a class="tilt" href="case.html#${p.slug}" data-tilt data-hue="${p.hue}" data-title="${esc(p.title)}" data-client="${esc(p.client)}">
@@ -100,9 +118,7 @@ document.getElementById('featured').innerHTML = featured.map((p, i) => `
     <span class="tilt__go" aria-hidden="true">&rarr;</span>
   </a>`).join('');
 init();
-// the hero card recedes as you scroll past it
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
-  gsap.to('.stage', { scale: 0.93, borderRadius: 44, ease: 'none', scrollTrigger: { trigger: '.stage', start: 'top top', end: 'bottom top', scrub: true } });
+import('./assets/world.js');   // the 3D world loads after the page is usable
 </script>
 </body>
 </html>
