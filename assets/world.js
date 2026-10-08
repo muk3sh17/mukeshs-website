@@ -34,19 +34,20 @@ const put = (f, i, x, y, z) => { F[f][i * 3] = x; F[f][i * 3 + 1] = y; F[f][i * 
 // 0 · noise: a wide storm around the start
 for (let i = 0; i < N; i++) put(0, i, rr(-1, 1) * W * 0.95, rr(-13, 13), zc(0) + rr(-26, 8));
 
-// 1 · listen: tight clusters (people, teams) on a loose shell, plus dust
-const clusters = Array.from({ length: 26 }, () => {
-  const a = R() * Math.PI * 2, b = rr(-0.9, 0.9), r = rr(5, 10);
-  return [Math.cos(a) * r * W / 26, b * 6, zc(1) + Math.sin(a) * r * 0.8, rr(0.35, 1.1)];
-});
+// formations stay clear of their chapter's text: beside it on desktop (side −1 left, +1 right),
+// in bands above and below it on phones
+const clear = side => narrow ? [rr(-0.45, 0.45) * W, (R() < 0.5 ? 1 : -1) * rr(5, 7.5)] : [side * rr(0.14, 0.44) * W, rr(-6, 6)];
+
+// 1 · listen: tight clusters (people, teams) to the right of the text, plus dust
+const clusters = Array.from({ length: 26 }, () => [...clear(1), zc(1) + rr(-5, 5), rr(0.35, 1.1)]);
 for (let i = 0; i < N; i++) {
-  if (R() < 0.08) { put(1, i, rr(-1, 1) * W * 0.6, rr(-8, 8), zc(1) + rr(-10, 10)); continue; }
+  if (R() < 0.08) { const [x, y] = clear(1); put(1, i, x, y, zc(1) + rr(-8, 8)); continue; }
   const [x, y, z, s] = clusters[(R() * R() * clusters.length) | 0];
   put(1, i, x + g() * s, y + g() * s, z + g() * s);
 }
 
-// 2 · shape: a constellation — nodes joined to their nearest neighbours
-const nodes = Array.from({ length: 34 }, () => [rr(-0.5, 0.5) * W, rr(-6, 6), zc(2) + rr(-6, 6)]);
+// 2 · shape: a constellation to the left of the text — nodes joined to their nearest neighbours
+const nodes = Array.from({ length: 34 }, () => [...clear(-1), zc(2) + rr(-3, 3)]);
 const edges = [];
 nodes.forEach((a, i) => nodes.map((b, j) => [j, Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2])]).sort((p, q) => p[1] - q[1])
   .slice(1, 3 + (i % 2)).forEach(([j]) => i < j && edges.push([a, nodes[j]])));
@@ -111,13 +112,13 @@ F.slice(1).forEach((f, k) => geo.setAttribute('p' + (k + 1), new THREE.BufferAtt
 geo.setAttribute('aFlow', new THREE.BufferAttribute(flow, 3));
 geo.setAttribute('aRnd', new THREE.BufferAttribute(rnd, 4));
 const U = { uPhase: { value: 0 }, uTime: { value: 0 }, uSize: { value: 1 }, uIntro: { value: reduce ? 1 : 0 },
-  uMouse: { value: new THREE.Vector3(0, 0, 999) }, uCalm: { value: reduce ? 0 : 1 } };
+  uRayO: { value: new THREE.Vector3() }, uRayD: { value: new THREE.Vector3() }, uMouseOn: { value: 0 }, uCalm: { value: reduce ? 0 : 1 } };
 const points = new THREE.Points(geo, new THREE.ShaderMaterial({
   uniforms: U, transparent: true, depthWrite: false,
   blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor,   // additive, premultiplied
   vertexShader: /* glsl */`
     attribute vec3 p1, p2, p3, p4, p5, aFlow; attribute vec4 aRnd;
-    uniform float uPhase, uTime, uSize, uIntro, uCalm; uniform vec3 uMouse;
+    uniform float uPhase, uTime, uSize, uIntro, uCalm, uMouseOn; uniform vec3 uRayO, uRayD;
     varying float vA; varying vec3 vCol;
     vec3 P(float i){
       if (i < .5) return position; if (i < 1.5) return p1; if (i < 2.5) return p2; if (i < 3.5) return p3;
@@ -132,7 +133,10 @@ const points = new THREE.Points(geo, new THREE.ShaderMaterial({
       pos += vec3(sin(pos.y * .25 + uTime * .7 + aRnd.x * 6.28), cos(pos.x * .2 + uTime * .6 + aRnd.w * 6.28), sin(pos.x * .15 + pos.y * .2 + uTime * .5)) * fly * uCalm;
       float e = smoothstep(aRnd.y * .5, aRnd.y * .5 + .5, uIntro);                // intro: burst out from the centre
       pos = mix(vec3(0., 0., 6.) + (pos - vec3(0., 0., 6.)) * .03, pos, e);
-      vec3 d = pos - uMouse; pos += normalize(d + 1e-4) * exp(-dot(d, d) * .3) * 1.8;   // cursor pushes particles away
+      // cursor pushes particles away from its ray, so it works at every depth with the same on-screen radius
+      vec3 d = pos - uRayO; float t = max(dot(d, uRayD), .1); vec3 perp = d - uRayD * t;
+      float ang = length(perp) / t;
+      pos += normalize(perp + 1e-4) * t * .045 * exp(-ang * ang / .008) * uMouseOn;
       vec4 mv = modelViewMatrix * vec4(pos, 1.);
       gl_Position = projectionMatrix * mv;
       gl_PointSize = min(uSize * mix(.45, 1.6, aRnd.x * aRnd.x) / -mv.z, 48.);
@@ -237,14 +241,17 @@ gsap.ticker.add(() => {
   U.uPhase.value = ph; U.uTime.value = t;
 
   // camera: down the z-track with a slow weave; the mouse adds parallax
-  camera.position.set(Math.sin(ps * Math.PI * 2) * 2.4 * sway + ms.x * 1.1, Math.cos(ps * Math.PI * 2) * 1.2 * sway + ms.y * 0.7, D - ps * GAP * 5);
+  // the weave is zero at each chapter's centre, so formations sit where the layout expects while text is read
+  const wv = Math.sin(ps * Math.PI * 5) * sway;
+  camera.position.set(wv * 2.4 + ms.x * 1.1, wv * 1.2 + ms.y * 0.7, D - ps * GAP * 5);
   look.set(camera.position.x * 0.3, camera.position.y * 0.3, camera.position.z - D);
   camera.lookAt(look);
   camera.updateMatrixWorld();
 
-  // cursor's point in the world, at the depth of the formation in view
+  // the cursor's ray, for the particle push and screen hover
   ray.setFromCamera(ms, camera);
-  if (pointer && !touch) U.uMouse.value.copy(ray.ray.origin).addScaledVector(ray.ray.direction, D * 0.85); else U.uMouse.value.set(0, 0, 999);
+  U.uRayO.value.copy(ray.ray.origin); U.uRayD.value.copy(ray.ray.direction);
+  U.uMouseOn.value += ((pointer && !touch ? 1 : 0) - U.uMouseOn.value) * k * 0.3;
 
   const w = i => THREE.MathUtils.clamp(1 - Math.abs(ph - i) * 2.5, 0, 1);
   constellation.material.opacity = w(2) * 0.35;
