@@ -62,7 +62,8 @@ function chrome() {
         <li><a class="nav__cta" href="${RESUME}" download>Resume <span aria-hidden="true">&darr;</span></a></li>
       </ul>
     </header>`);
-  document.querySelector('main').insertAdjacentHTML('beforeend', `
+  // the home page ends in its own contact chapter
+  if (page !== 'home') document.querySelector('main').insertAdjacentHTML('beforeend', `
     <section id="contact" class="contact">
       <div>
         <span class="label">Contact</span>
