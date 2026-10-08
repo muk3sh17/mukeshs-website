@@ -55,10 +55,7 @@ em{font-style:normal;color:var(--accent)}
 .roll span::after{content:attr(data-t);position:absolute;left:0;top:100%}
 .roll:hover span{transform:translateY(-100%)}
 .nav__links a[aria-current="page"]::before{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor}
-.status{display:inline-flex;align-items:center;gap:8px}
-.status i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(179,64,31,.55);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(179,64,31,0)}100%{box-shadow:0 0 0 0 rgba(179,64,31,0)}}
-@media (max-width:760px){.nav .status{display:none}}
 
 main{position:relative;z-index:1}
 section{position:relative;padding:clamp(96px,14vw,180px) var(--pad)}
@@ -194,7 +191,7 @@ section{position:relative;padding:clamp(96px,14vw,180px) var(--pad)}
 .totop{background:none;border:0;color:inherit;font:inherit}
 
 @media (prefers-reduced-motion:reduce){
-  .grain,.marquee__track,.scroll-cue i,.status i{animation:none}
+  .grain,.marquee__track,.scroll-cue i{animation:none}
 }
 
 /* ================= story world (home) ================= */
@@ -308,29 +305,36 @@ body[data-page=home]{background:#140907}
 html:has(body.dark),body.dark{background:#140907}
 body.dark{--bg:#140907;--fg:var(--cream);--dim:rgba(251,243,234,.62);--line:rgba(251,243,234,.16);--accent:var(--hi);color:var(--cream)}
 #field{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.dark main > section{z-index:1}
+.dark main > section{z-index:1;padding-block:clamp(56px,7vw,104px)}
+.dark main > .ab-hero{padding-top:clamp(110px,15vh,150px);padding-bottom:clamp(40px,6vw,80px)}
 .dark em{color:var(--hi)}
 
 /* who I am */
-.ab-hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,5vw,80px);padding-top:clamp(110px,16vh,160px)}
-.ab-title{font-family:var(--display);font-weight:600;font-size:clamp(40px,min(6.4vw,10vh),112px);line-height:.95;letter-spacing:-.035em;margin-bottom:clamp(18px,3vh,28px)}
+.ab-hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,80px);padding-top:clamp(110px,16vh,160px)}
+.ab-title{font-family:var(--display);font-weight:600;font-size:clamp(34px,min(4.6vw,8vh),84px);line-height:.95;letter-spacing:-.035em;margin-bottom:clamp(18px,3vh,28px)}
 .ab-title .line{display:block;overflow:hidden;padding:0 .08em .12em 0;margin-bottom:-.12em}
 .ab-title em{color:var(--hi);font-size:1.21em}
-.ab-lead{font-size:clamp(17px,1.4vw,21px);line-height:1.55;max-width:48ch}
+.ab-sub{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,34px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;margin-bottom:22px}
+.ab-lead{font-size:clamp(16px,1.25vw,19px);line-height:1.6;max-width:56ch;color:rgba(251,243,234,.86)}
+.ab-lead strong{color:var(--cream);font-weight:700}
 .ab-facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .ab-facts li{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;color:rgba(251,243,234,.85)}
-/* portrait: cut-out photo in an arch, head breaking out of the frame; warm monochrome, colour on hover */
-.portrait{position:relative;justify-self:center;width:min(440px,100%);aspect-ratio:4/5;perspective:900px;transform-style:preserve-3d}
-.portrait__arch{position:absolute;inset:32% 4% 0;border-radius:999px 999px 28px 28px;
-  background:radial-gradient(90% 70% at 50% 85%,rgba(255,205,87,.35),transparent 70%),linear-gradient(180deg,#3a1a12,#1c0c08);
-  box-shadow:inset 0 0 0 1px rgba(255,205,87,.35),0 40px 80px rgba(0,0,0,.45)}
-.portrait img{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;
-  clip-path:inset(-40% 4% 0 4% round 0 0 28px 28px);filter:grayscale(1) sepia(.45) saturate(1.3) contrast(1.05) brightness(.95);transition:filter .8s var(--ease)}
+/* portrait: cut-out photo on a disc, head breaking out over it, inside a turning "problem solver" ring;
+   warm monochrome, colour on hover. Two copies of the photo: one clipped to the disc, one showing only
+   what sits above the disc's centre, so the head overlaps the ring. */
+.portrait{position:relative;justify-self:center;width:min(580px,100%);aspect-ratio:1;perspective:900px;transform-style:preserve-3d}
+.portrait__ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite;fill:var(--hi);font-family:var(--mono);font-size:9px;letter-spacing:.12em;opacity:.9}
+@keyframes spin{to{rotate:360deg}}
+.portrait__disc{position:absolute;inset:13%;border-radius:50%;
+  background:radial-gradient(70% 70% at 50% 75%,rgba(255,205,87,.4),transparent 70%),linear-gradient(180deg,#3a1a12,#1c0c08);
+  box-shadow:inset 0 0 0 1px rgba(255,205,87,.4),0 40px 90px rgba(0,0,0,.5)}
+.portrait img{position:absolute;left:6%;top:2%;width:88%;height:auto;filter:grayscale(1) sepia(.45) saturate(1.3) contrast(1.05) brightness(.95);transition:filter .8s var(--ease)}
+.portrait__base{clip-path:circle(42% at 50% 54.5%)}
+.portrait__pop{clip-path:inset(0 0 45.5% 0)}
 .portrait:hover img{filter:none}
 .portrait__tag{position:absolute;left:clamp(0%,var(--x),62%);top:var(--y);background:rgba(20,9,7,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   border:1px solid rgba(255,205,87,.4);color:var(--hi);border-radius:99px;padding:7px 12px;white-space:nowrap;transform:translateZ(60px);animation:bob 5s ease-in-out infinite}
-.portrait__tag:nth-of-type(2){animation-delay:-1.6s}
-.portrait__tag:nth-of-type(3){animation-delay:-3.2s}
+.portrait__tag:nth-of-type(2){animation-delay:-2.4s}
 @keyframes bob{50%{translate:0 -8px}}
 
 /* what I do */
@@ -352,7 +356,7 @@ body.dark{--bg:#140907;--fg:var(--cream);--dim:rgba(251,243,234,.62);--line:rgba
 .wins li > span{font-size:14px;color:rgba(251,243,234,.8);max-width:28ch}
 
 /* skills */
-.skillset{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--pad);margin-top:clamp(36px,5vw,64px)}
+.skillset{display:grid;grid-template-columns:repeat(2,1fr);align-items:start;gap:0 var(--pad);margin-top:clamp(36px,5vw,64px)}
 .skillset > div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
 .skillset h3{font-family:var(--display);font-weight:500;font-size:22px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -401,7 +405,7 @@ body.dark{--bg:#140907;--fg:var(--cream);--dim:rgba(251,243,234,.62);--line:rgba
 
 @media (max-width:900px){
   .ab-hero{grid-template-columns:1fr;padding-top:110px}
-  .portrait{width:min(340px,90%);order:-1}
+  .portrait{width:min(420px,100%);order:-1}
   .does,.loves{grid-template-columns:1fr 1fr}
   .wins{grid-template-columns:1fr 1fr}
   .wins li:not(:nth-child(4n+1)){padding-left:0;border-left:0}
