@@ -88,18 +88,18 @@ for (let i = 0; i < N; i++) {
 }
 
 // 5 · build: the closing words, sampled from text drawn on a 2D canvas
-await Promise.race([document.fonts.load('800 200px "Bricolage Grotesque"'), new Promise(r => setTimeout(r, 1500))]);
+await Promise.race([document.fonts.load('600 200px "Clash Display"'), new Promise(r => setTimeout(r, 1500))]);
 {
   const c = document.createElement('canvas'), x = c.getContext('2d', { willReadFrequently: true });
   c.width = 1000; c.height = 560;
-  x.fillStyle = '#fff'; x.font = '800 250px "Bricolage Grotesque", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillStyle = '#fff'; x.font = '600 250px "Clash Display", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
   x.fillText('LET’S', 500, 150); x.fillText('BUILD', 500, 410);
   const px = x.getImageData(0, 0, 1000, 560).data, pts = [];
   for (let y = 0; y < 560; y += 3) for (let k = 0; k < 1000; k += 3) if (px[(y * 1000 + k) * 4 + 3] > 128) pts.push([k, y]);
-  const s = W * (narrow ? 0.98 : 0.8) / 1000;
+  const s = W * (narrow ? 0.98 : 0.72) / 1000;
   for (let i = 0; i < N; i++) {
     const [k, y] = pts[(R() * pts.length) | 0];
-    put(5, i, (k - 500) * s + g() * 0.04, (280 - y) * s + 1.8 + g() * 0.04, zc(5) + g() * 0.3);
+    put(5, i, (k - 500) * s + g() * 0.04, (280 - y) * s + (narrow ? 4.6 : 1.3) + g() * 0.04, zc(5) + g() * 0.3);
   }
 }
 for (let i = 0; i < N; i++) rnd.set([R(), R(), R(), R()], i * 4);
@@ -137,7 +137,10 @@ const points = new THREE.Points(geo, new THREE.ShaderMaterial({
       gl_Position = projectionMatrix * mv;
       gl_PointSize = min(uSize * mix(.45, 1.6, aRnd.x * aRnd.x) / -mv.z, 48.);
       vA = smoothstep(46., 8., -mv.z) * smoothstep(.3, 3., -mv.z) * (.35 + .65 * aRnd.w) * e;
-      vCol = aRnd.w < .62 ? vec3(1., .92, .8) : aRnd.w < .86 ? vec3(1., .78, .32) : vec3(.95, .42, .25);
+      // noise starts cold (grey-blue static) and warms to gold as it turns into product
+      vec3 cold = aRnd.w < .62 ? vec3(.62, .67, .8) : aRnd.w < .86 ? vec3(.4, .47, .68) : vec3(.86, .88, .95);
+      vec3 warm = aRnd.w < .62 ? vec3(1., .9, .76) : aRnd.w < .86 ? vec3(1., .76, .3) : vec3(.95, .42, .25);
+      vCol = mix(cold, warm, smoothstep(.15 + aRnd.y * .5, .65 + aRnd.y * .5, uPhase));
     }`,
   fragmentShader: /* glsl */`
     varying float vA; varying vec3 vCol;
@@ -187,11 +190,7 @@ const planes = screens.map(({ p, o }) => {
 // ---------- scroll, pointer, camera ----------
 // progress in chapters: 0 when chapter 0's centre is mid-screen, 1 for chapter 1, … (chapters differ in height)
 let centers = [], p = 0, ps = 0, active = true, hovered = null;
-let storyEnd = 0;
-const measure = () => {
-  centers = [...story.children].map(c => { const r = c.getBoundingClientRect(); return r.top + scrollY + r.height / 2; });
-  storyEnd = story.getBoundingClientRect().bottom + scrollY;
-};
+const measure = () => centers = [...story.children].map(c => { const r = c.getBoundingClientRect(); return r.top + scrollY + r.height / 2; });
 const progress = () => {
   const m = scrollY + innerHeight / 2, n = centers.length - 1;
   if (m <= centers[0]) return 0;
@@ -233,8 +232,6 @@ gsap.ticker.add(() => {
   if (!active) return;
   const dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime, k = 1 - Math.pow(0.001, dt);
   p = progress(); ps += (p - ps) * k * 0.6;
-  // once the story's end reaches the bottom of the screen, the world scrolls away with it
-  canvas.style.transform = `translateY(${-Math.max(0, scrollY + innerHeight - storyEnd)}px)`;
   ms.lerp(mouse, k * 0.5);
   const ph = phaseOf(ps), sway = reduce ? 0 : 1;
   U.uPhase.value = ph; U.uTime.value = t;

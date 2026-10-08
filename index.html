@@ -10,7 +10,8 @@
 <meta property="og:description" content="Case studies in AI-enabled platforms, enterprise SaaS and 0→1 products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="loading" data-page="home">
@@ -21,28 +22,24 @@
   <div class="story" id="story">
     <section class="chap chap--hero" data-hero-zone aria-label="Introduction">
       <div class="chap__copy">
-        <p class="pill pill--glass mono"><span class="dot" aria-hidden="true"></span><span data-scramble>AI Product Manager</span></p>
-        <h1 class="chap__title" data-hero aria-label="I'm Mukesh. I turn noise into AI products.">
-          <span class="line">I'm Mukesh.</span>
-          <span class="line">I turn noise</span>
-          <span class="line"><em>into AI products.</em></span>
+        <p class="pill pill--glass mono"><span class="dot" aria-hidden="true"></span><span id="greet" data-scramble>Hello, welcome</span></p>
+        <h1 class="chap__title" data-hero aria-label="I'm Mukesh, AI Product Manager.">
+          <span class="line">I'm Mukesh,</span>
+          <span class="line"><em>AI Product Manager.</em></span>
         </h1>
-        <p class="chap__intro" data-split>I take products from day zero to production, turning complex operations into platforms where data and AI change how people work.</p>
+        <p class="chap__intro" data-split>I turn noise into AI products — taking them from day zero to production, and turning complex operations into platforms where data and AI change how people work.</p>
         <div class="chap__cta">
-          <a class="pill pill--solid" href="#work" data-magnetic>See my work <i>&rarr;</i></a>
+          <a class="pill pill--solid" href="work.html" data-magnetic>See my work <i>&rarr;</i></a>
           <a class="pill pill--ghost" href="assets/Mukesh_Sankarasetty_Resume.pdf" download data-magnetic>Résumé <i>&darr;</i></a>
         </div>
       </div>
-      <aside class="chap__side">
-        <ul class="chap__stats">
-          <li><b>10+</b><span>Years in software</span></li>
-          <li><b>8+</b><span>0 → 1 products</span></li>
-          <li><b>6</b><span>AI &amp; GenAI products</span></li>
-          <li><b>6+</b><span>Industries</span></li>
-        </ul>
-        <dl class="chap__facts mono"><div><dt>Based in</dt><dd data-scramble>Bangalore, India</dd></div></dl>
-      </aside>
-      <p class="chap__cue mono" aria-hidden="true"><span></span>Scroll to see how I work</p>
+      <dl class="hud">
+        <div><dt class="mono">Experience</dt><dd><b data-count="10" data-suffix="+">10+</b><span>Years in software</span></dd></div>
+        <div><dt class="mono">Built</dt><dd><b data-count="8" data-suffix="+">8+</b><span>0 → 1 products</span></dd></div>
+        <div><dt class="mono">AI</dt><dd><b data-count="6">6</b><span>AI &amp; GenAI products</span></dd></div>
+        <div><dt class="mono">Range</dt><dd><b data-count="6" data-suffix="+">6+</b><span>Industries</span></dd></div>
+        <div class="hud__loc"><dt class="mono"><span class="dot" aria-hidden="true"></span>Based in</dt><dd><b>Bangalore</b><span>India · <time id="clock">--:--</time> IST</span></dd></div>
+      </dl>
     </section>
 
     <section class="chap">
@@ -74,32 +71,24 @@
       </ul>
     </section>
 
-    <section class="chap chap--end">
+    <section class="chap chap--end" id="contact" aria-label="Contact">
       <p class="chap__body" data-reveal>Open to AI Product Manager roles — Bangalore or remote.</p>
-      <div class="chap__cta" data-reveal>
-        <a class="pill pill--solid" href="#contact" data-magnetic>Get in touch <i>&rarr;</i></a>
-        <a class="pill pill--ghost" href="#work" data-magnetic>Selected work <i>&darr;</i></a>
-      </div>
+      <ul class="links" data-reveal>
+        <li><a class="pill pill--solid" href="mailto:sankarasettymukesh@gmail.com" data-magnetic>sankarasettymukesh@gmail.com <i>&rarr;</i></a></li>
+        <li><a class="pill pill--ghost" href="https://www.linkedin.com/in/mukesh-sankarasetty/" target="_blank" rel="noopener" data-magnetic>LinkedIn <i>&nearr;</i></a></li>
+        <li><a class="pill pill--ghost" href="https://github.com/muk3sh17" target="_blank" rel="noopener" data-magnetic>GitHub <i>&nearr;</i></a></li>
+        <li><a class="pill pill--ghost" href="assets/Mukesh_Sankarasetty_Resume.pdf" download data-magnetic>Résumé <i>&darr;</i></a></li>
+      </ul>
+      <footer class="foot mono">
+        <span>&copy; <span id="year">2026</span> Mukesh Sankarasetty</span>
+        <span>Bangalore, India</span>
+        <button class="totop">Back to top &uarr;</button>
+      </footer>
+    </section>
+  </div>
     </section>
   </div>
 
-  <section class="after" id="work">
-    <span class="label">Selected case studies</span>
-    <h2 class="h2" data-split>Selected <em>work</em></h2>
-    <p class="body" style="margin:24px 0 clamp(32px,5vw,64px)" data-reveal>Each case study walks through the context, my role, the process, key decisions, outcomes and what I learned.</p>
-    <div class="tilt-grid" id="featured"></div>
-    <p style="margin-top:48px"><a class="btn" href="work.html" data-magnetic>All case studies <i>&rarr;</i></a></p>
-  </section>
-
-  <section class="after">
-    <span class="label">Companies &amp; clients</span>
-    <div class="marquee" aria-label="Companies and clients: WNS, Bamboo Connect, Northern Neck Insurance, Mediaplus, Cargill, Verizon, Samsung, Terminix, ZF Wabco, Brillio, Identifor, Chrysalis">
-      <div class="marquee__track" aria-hidden="true">
-        <span>WNS</span><span>Bamboo Connect</span><span>Northern Neck Insurance</span><span>Mediaplus</span><span>Cargill</span><span>Verizon</span><span>Samsung</span><span>Terminix</span><span>ZF Wabco</span><span>Brillio</span><span>Identifor</span><span>Chrysalis</span>
-        <span>WNS</span><span>Bamboo Connect</span><span>Northern Neck Insurance</span><span>Mediaplus</span><span>Cargill</span><span>Verizon</span><span>Samsung</span><span>Terminix</span><span>ZF Wabco</span><span>Brillio</span><span>Identifor</span><span>Chrysalis</span>
-      </div>
-    </div>
-  </section>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -107,16 +96,14 @@
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
 <script type="module">
-import { init, esc } from './assets/site.js';
-import { projects } from './assets/projects.js';
-const featured = projects.filter(p => p.featured);
-document.getElementById('featured').innerHTML = featured.map((p, i) => `
-  <a class="tilt" href="case.html#${p.slug}" data-tilt data-hue="${p.hue}" data-title="${esc(p.title)}" data-client="${esc(p.client)}">
-    <div class="tilt__img" style="--h:${Math.round(p.hue * 360)}">${p.cover ? `<img src="${esc(p.cover)}" alt="" loading="lazy">` : `<b>${esc(p.title)}</b>`}</div>
-    <div class="tilt__meta"><span class="mono">${String(i + 1).padStart(2, '0')} · ${esc(p.year)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>
-      <span class="tilt__tags mono">${p.tags.slice(0, 3).map(t => `<i>${esc(t)}</i>`).join('')}</span></div>
-    <span class="tilt__go" aria-hidden="true">&rarr;</span>
-  </a>`).join('');
+import { init } from './assets/site.js';
+// greet by the visitor's local time; Bangalore clock in the status strip
+const h = new Date().getHours();
+document.getElementById('greet').textContent = `${h < 5 ? 'Hello, night owl' : h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening'} — welcome`;
+document.getElementById('year').textContent = new Date().getFullYear();
+const clock = document.getElementById('clock'), fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' });
+const tick = () => clock.textContent = fmt.format(new Date());
+tick(); setInterval(tick, 10000);
 init();
 import('./assets/world.js');   // the 3D world loads after the page is usable
 </script>
