@@ -55,6 +55,7 @@ function chrome() {
     <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>View</span></div></div>
     <header class="nav">
       <ul class="nav__links mono">
+        <li>${roll('index.html', 'Home', cur('home'))}</li>
         <li>${roll('about.html', 'About me', cur('about'))}</li>
         <li>${roll('work.html', 'Work', cur('work'))}</li>
         <li>${roll('#contact', 'Contact')}</li>
